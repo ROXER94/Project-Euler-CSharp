@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{24600361-6D7F-4237-9465-0C19749D363B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ProjectEuler</RootNamespace>
+    <AssemblyName>ProjectEuler</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Common\Functions.cs" />
+    <Compile Include="Problem001.cs" />
+    <Compile Include="Problem006.cs" />
+    <Compile Include="Problem007.cs" />
+    <Compile Include="Problem008.cs" />
+    <Compile Include="Problem009.cs" />
+    <Compile Include="Problem010.cs" />
+    <Compile Include="Problem011.cs" />
+    <Compile Include="Problem012.cs" />
+    <Compile Include="Problem013.cs" />
+    <Compile Include="Problem014.cs" />
+    <Compile Include="Problem015.cs" />
+    <Compile Include="Problem016.cs" />
+    <Compile Include="Problem017.cs" />
+    <Compile Include="Problem018.cs" />
+    <Compile Include="Problem019.cs" />
+    <Compile Include="Problem020.cs" />
+    <Compile Include="Problem021.cs" />
+    <Compile Include="Problem022.cs" />
+    <Compile Include="Problem023.cs" />
+    <Compile Include="Problem024.cs" />
+    <Compile Include="Problem025.cs" />
+    <Compile Include="Problem026.cs" />
+    <Compile Include="Problem027.cs" />
+    <Compile Include="Problem028.cs" />
+    <Compile Include="Problem029.cs" />
+    <Compile Include="Problem030.cs" />
+    <Compile Include="Problem031.cs" />
+    <Compile Include="Problem032.cs" />
+    <Compile Include="Problem033.cs" />
+    <Compile Include="Problem034.cs" />
+    <Compile Include="Problem035.cs" />
+    <Compile Include="Problem036.cs" />
+    <Compile Include="Problem037.cs" />
+    <Compile Include="Problem038.cs" />
+    <Compile Include="Problem039.cs" />
+    <Compile Include="Problem040.cs" />
+    <Compile Include="Problem041.cs" />
+    <Compile Include="Problem042.cs" />
+    <Compile Include="Problem043.cs" />
+    <Compile Include="Problem044.cs" />
+    <Compile Include="Problem045.cs" />
+    <Compile Include="Problem046.cs" />
+    <Compile Include="Problem047.cs" />
+    <Compile Include="Problem048.cs" />
+    <Compile Include="Problem049.cs" />
+    <Compile Include="Problem050.cs" />
+    <Compile Include="Problem051.cs" />
+    <Compile Include="Problem052.cs" />
+    <Compile Include="Problem053.cs" />
+    <Compile Include="Problem054.cs" />
+    <Compile Include="Problem055.cs" />
+    <Compile Include="Problem056.cs" />
+    <Compile Include="Problem057.cs" />
+    <Compile Include="Problem058.cs" />
+    <Compile Include="Problem059.cs" />
+    <Compile Include="Problem060.cs" />
+    <Compile Include="Problem061.cs" />
+    <Compile Include="Problem062.cs" />
+    <Compile Include="Problem063.cs" />
+    <Compile Include="Problem064.cs" />
+    <Compile Include="Problem065.cs" />
+    <Compile Include="Problem066.cs" />
+    <Compile Include="Problem067.cs" />
+    <Compile Include="Problem068.cs" />
+    <Compile Include="Problem069.cs" />
+    <Compile Include="Problem070.cs" />
+    <Compile Include="Problem071.cs" />
+    <Compile Include="Problem072.cs" />
+    <Compile Include="Problem073.cs" />
+    <Compile Include="Problem074.cs" />
+    <Compile Include="Problem075.cs" />
+    <Compile Include="Problem076.cs" />
+    <Compile Include="Problem077.cs" />
+    <Compile Include="Problem078.cs" />
+    <Compile Include="Problem079.cs" />
+    <Compile Include="Problem080.cs" />
+    <Compile Include="Problem081.cs" />
+    <Compile Include="Problem085.cs" />
+    <Compile Include="Problem086.cs" />
+    <Compile Include="Problem087.cs" />
+    <Compile Include="Problem089.cs" />
+    <Compile Include="Problem091.cs" />
+    <Compile Include="Problem092.cs" />
+    <Compile Include="Problem093.cs" />
+    <Compile Include="Problem094.cs" />
+    <Compile Include="Problem095.cs" />
+    <Compile Include="Problem097.cs" />
+    <Compile Include="Problem098.cs" />
+    <Compile Include="Problem099.cs" />
+    <Compile Include="Problem100.cs" />
+    <Compile Include="Problem101.cs" />
+    <Compile Include="Problem102.cs" />
+    <Compile Include="Problem104.cs" />
+    <Compile Include="Problem108.cs" />
+    <Compile Include="Problem110.cs" />
+    <Compile Include="Problem112.cs" />
+    <Compile Include="Problem113.cs" />
+    <Compile Include="Problem119.cs" />
+    <Compile Include="Problem120.cs" />
+    <Compile Include="Problem123.cs" />
+    <Compile Include="Problem124.cs" />
+    <Compile Include="Problem125.cs" />
+    <Compile Include="Problem127.cs" />
+    <Compile Include="Problem129.cs" />
+    <Compile Include="Problem130.cs" />
+    <Compile Include="Problem131.cs" />
+    <Compile Include="Problem132.cs" />
+    <Compile Include="Problem133.cs" />
+    <Compile Include="Problem145.cs" />
+    <Compile Include="Problem148.cs" />
+    <Compile Include="Problem166.cs" />
+    <Compile Include="Problem169.cs" />
+    <Compile Include="Problem173.cs" />
+    <Compile Include="Problem175.cs" />
+    <Compile Include="Problem176.cs" />
+    <Compile Include="Problem179.cs" />
+    <Compile Include="Problem187.cs" />
+    <Compile Include="Problem188.cs" />
+    <Compile Include="Problem190.cs" />
+    <Compile Include="Problem193.cs" />
+    <Compile Include="Problem203.cs" />
+    <Compile Include="Problem204.cs" />
+    <Compile Include="Problem205.cs" />
+    <Compile Include="Problem206.cs" />
+    <Compile Include="Problem207.cs" />
+    <Compile Include="Problem211.cs" />
+    <Compile Include="Problem214.cs" />
+    <Compile Include="Problem218.cs" />
+    <Compile Include="Problem225.cs" />
+    <Compile Include="Problem265.cs" />
+    <Compile Include="Problem277.cs" />
+    <Compile Include="Problem293.cs" />
+    <Compile Include="Problem301.cs" />
+    <Compile Include="Problem303.cs" />
+    <Compile Include="Problem347.cs" />
+    <Compile Include="Problem348.cs" />
+    <Compile Include="Problem349.cs" />
+    <Compile Include="Problem351.cs" />
+    <Compile Include="Problem357.cs" />
+    <Compile Include="Problem381.cs" />
+    <Compile Include="Problem504.cs" />
+    <Compile Include="Problem548.cs" />
+    <Compile Include="Problem577.cs" />
+    <Compile Include="Problem581.cs" />
+    <Compile Include="Problem587.cs" />
+    <Compile Include="Problem604.cs" />
+    <Compile Include="_Solutions.cs" />
+    <Compile Include="Problem002.cs" />
+    <Compile Include="Problem003.cs" />
+    <Compile Include="Problem004.cs" />
+    <Compile Include="Problem005.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Numerics" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Resources\p022_names.txt" />
+    <Content Include="Resources\p042_words.txt" />
+    <Content Include="Resources\p054_poker.txt" />
+    <Content Include="Resources\p059_cipher.txt" />
+    <Content Include="Resources\p067_triangle.txt" />
+    <Content Include="Resources\p079_keylog.txt" />
+    <Content Include="Resources\p081_matrix.txt" />
+    <Content Include="Resources\p089_roman.txt" />
+    <Content Include="Resources\p098_words.txt" />
+    <Content Include="Resources\p099_base_exp.txt" />
+    <Content Include="Resources\p102_triangles.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
