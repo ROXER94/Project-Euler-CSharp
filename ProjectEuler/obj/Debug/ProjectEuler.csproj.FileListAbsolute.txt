@@ -1,5 +1,5 @@
-C:\Users\roxer\Documents\Informetric\PROJECTS\Visual Studio\ProjectEuler\ProjectEuler\bin\Debug\ProjectEuler.exe
-C:\Users\roxer\Documents\Informetric\PROJECTS\Visual Studio\ProjectEuler\ProjectEuler\bin\Debug\ProjectEuler.pdb
-C:\Users\roxer\Documents\Informetric\PROJECTS\Visual Studio\ProjectEuler\ProjectEuler\obj\Debug\ProjectEuler.csprojResolveAssemblyReference.cache
-C:\Users\roxer\Documents\Informetric\PROJECTS\Visual Studio\ProjectEuler\ProjectEuler\obj\Debug\ProjectEuler.exe
-C:\Users\roxer\Documents\Informetric\PROJECTS\Visual Studio\ProjectEuler\ProjectEuler\obj\Debug\ProjectEuler.pdb
+C:\Users\roxer\Downloads\Project-Euler-CSharp-master\ProjectEuler\obj\Debug\ProjectEuler.exe
+C:\Users\roxer\Downloads\Project-Euler-CSharp-master\ProjectEuler\obj\Debug\ProjectEuler.pdb
+C:\Users\roxer\Downloads\Project-Euler-CSharp-master\ProjectEuler\bin\Debug\ProjectEuler.exe
+C:\Users\roxer\Downloads\Project-Euler-CSharp-master\ProjectEuler\bin\Debug\ProjectEuler.pdb
+C:\Users\roxer\Downloads\Project-Euler-CSharp-master\ProjectEuler\obj\Debug\ProjectEuler.csprojResolveAssemblyReference.cache
