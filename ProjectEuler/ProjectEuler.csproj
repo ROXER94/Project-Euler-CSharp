@@ -33,7 +33,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Common\Functions.cs" />
+	<Compile Include="_Solutions.cs" />
     <Compile Include="Problem001.cs" />
+	<Compile Include="Problem002.cs" />
+    <Compile Include="Problem003.cs" />
+    <Compile Include="Problem004.cs" />
+    <Compile Include="Problem005.cs" />
     <Compile Include="Problem006.cs" />
     <Compile Include="Problem007.cs" />
     <Compile Include="Problem008.cs" />
@@ -146,12 +151,14 @@
     <Compile Include="Problem166.cs" />
     <Compile Include="Problem169.cs" />
     <Compile Include="Problem173.cs" />
+    <Compile Include="Problem174.cs" />
     <Compile Include="Problem175.cs" />
     <Compile Include="Problem176.cs" />
     <Compile Include="Problem179.cs" />
     <Compile Include="Problem187.cs" />
     <Compile Include="Problem188.cs" />
     <Compile Include="Problem190.cs" />
+    <Compile Include="Problem191.cs" />
     <Compile Include="Problem193.cs" />
     <Compile Include="Problem203.cs" />
     <Compile Include="Problem204.cs" />
@@ -173,17 +180,14 @@
     <Compile Include="Problem351.cs" />
     <Compile Include="Problem357.cs" />
     <Compile Include="Problem381.cs" />
+    <Compile Include="Problem407.cs" />
+    <Compile Include="Problem451.cs" />
     <Compile Include="Problem504.cs" />
     <Compile Include="Problem548.cs" />
     <Compile Include="Problem577.cs" />
     <Compile Include="Problem581.cs" />
     <Compile Include="Problem587.cs" />
     <Compile Include="Problem604.cs" />
-    <Compile Include="_Solutions.cs" />
-    <Compile Include="Problem002.cs" />
-    <Compile Include="Problem003.cs" />
-    <Compile Include="Problem004.cs" />
-    <Compile Include="Problem005.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
