@@ -21,7 +21,7 @@ namespace ProjectEuler
             for (int c = 2; c < N; c++)
             {
                 if (rad[c - 1] * rad[c] < c) ans += c;
-                if (6 * rad[c] < c)
+                else if (6 * rad[c] < c)
                     for (int a = 2; a < c / 2; a++)
                         if (rad[a] * rad[c] < c)
                             if (Functions.getGCD(a, c) == 1)
