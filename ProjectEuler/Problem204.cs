@@ -12,7 +12,7 @@ namespace ProjectEuler
         /// <param name="index">Int</param>
         /// <param name="value">Long</param>
         /// <param name="primesList">List</param>
-        /// <param name="limit">Double</param>
+        /// <param name="limit">Int</param>
         /// <returns>The count of generalised Hamming numbers which don't exceed a limit</returns>
         static int getHammingCount(int index, long value, List<long> primes, int limit)
         {
