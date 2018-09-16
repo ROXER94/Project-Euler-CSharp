@@ -1,4 +1,4 @@
-﻿using ProjectEuler.Common;
+using ProjectEuler.Common;
 using System;
 
 namespace ProjectEuler
