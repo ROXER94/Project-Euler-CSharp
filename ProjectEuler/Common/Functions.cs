@@ -27,12 +27,12 @@ namespace ProjectEuler.Common
         /// Converts IEnumerable to HashSet
         /// </summary>
         /// <typeparam name="T">Type</typeparam>
-        /// <param name="enumerable"></param>
+        /// <param name="enumerable">IEnumerable</param>
         /// <returns>Returns HashSet</returns>
-        public static HashSet<T> ToHashSet<T>(this IEnumerable<T> enumerable)
+        public static HashSet<T> ToHashSet<T>(this IEnumerable<T> input)
         {
             HashSet<T> hs = new HashSet<T>();
-            foreach (T item in enumerable)
+            foreach (T item in input)
                 hs.Add(item);
             return hs;
         }
@@ -399,7 +399,7 @@ namespace ProjectEuler.Common
         /// </summary>
         /// <param name="n">Int</param>
         /// <param name="k">Int</param>
-        /// <returns>nCr</returns>
+        /// <returns>The binomial coefficient</returns>
         public static BigInteger getnCk(int n, int k)
         {
             BigInteger r = 1;
@@ -480,7 +480,7 @@ namespace ProjectEuler.Common
         /// <param name="a">Double</param>
         /// <param name="b">Double</param>
         /// <param name="c">Double</param>
-        /// <returns>The area of Triangle abc</returns>
+        /// <returns>The area of triangle abc</returns>
         public static double getHeron(double a, double b, double c)
         {
             double s = (a + b + c) / 2;
