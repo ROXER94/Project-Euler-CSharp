@@ -55,9 +55,9 @@ namespace ProjectEuler
                                     foreach (string op3 in new string[] { "+", "-", "*", "/" })
                                         foreach (var i in Functions.getPermutations(new string[] { a.ToString(), b.ToString(), c.ToString(), d.ToString() }, 4))
                                         {
-                                            try { RPN.Add(getReversePolishNotation(new string[] { i.ElementAt(0), i.ElementAt(1), i.ElementAt(2), op1, i.ElementAt(3), op2, op3 })); }
-                                            catch { }
                                             try { RPN.Add(getReversePolishNotation(new string[] { i.ElementAt(0), i.ElementAt(1), i.ElementAt(2), i.ElementAt(3), op1, op2, op3 })); }
+                                            catch { }
+                                            try { RPN.Add(getReversePolishNotation(new string[] { i.ElementAt(0), i.ElementAt(1), i.ElementAt(2), op1, i.ElementAt(3), op2, op3 })); }
                                             catch { }
                                         }
                             RPN.RemoveWhere(n => n <= 0 || n % 1 != 0);
