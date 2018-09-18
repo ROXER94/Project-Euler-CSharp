@@ -14,26 +14,41 @@ namespace ProjectEuler
         /// <returns>The result of the Reverse Polish Notation expression</returns>
         static double getReversePolishNotation(string[] expression)
         {
-            Stack<object> stack = new Stack<object>();
+            Stack<double> stack = new Stack<double>();
             foreach (string i in expression)
             {
-                int result;
-                if (!Int32.TryParse(i, out result))
+                if (i == "+" || i == "-" || i == "*" || i == "/")
                 {
                     if (i.ToString() == "+")
-                        stack.Push(Convert.ToDouble(stack.Pop()) + Convert.ToDouble(stack.Pop()));
+                    {
+                        double a = stack.Pop();
+                        double b = stack.Pop();
+                        stack.Push(b + a);
+                    }
                     else if (i.ToString() == "-")
-                        stack.Push(Convert.ToDouble(stack.Pop()) - Convert.ToDouble(stack.Pop()));
+                    {
+                        double a = stack.Pop();
+                        double b = stack.Pop();
+                        stack.Push(b - a);
+                    }
                     else if (i.ToString() == "*")
-                        stack.Push(Convert.ToDouble(stack.Pop()) * Convert.ToDouble(stack.Pop()));
+                    {
+                        double a = stack.Pop();
+                        double b = stack.Pop();
+                        stack.Push(b * a);
+                    }
                     else if (i.ToString() == "/")
-                        stack.Push(Convert.ToDouble(stack.Pop()) / Convert.ToDouble(stack.Pop()));
+                    {
+                        double a = stack.Pop();
+                        double b = stack.Pop();
+                        stack.Push(b / a);
+                    }
                 }
-                else stack.Push(i);
+                else stack.Push(Convert.ToDouble(i));
             }
-            if (double.IsInfinity((double)stack.Peek()) || double.IsNaN((double)stack.Peek()))
+            if (double.IsInfinity(stack.Peek()) || double.IsNaN(stack.Peek()))
                 throw new System.ArgumentException("Division by constant zero");
-            return (double)stack.Peek();
+            return stack.Peek();
         }
 
         /// <summary>
@@ -55,15 +70,17 @@ namespace ProjectEuler
                                     foreach (string op3 in new string[] { "+", "-", "*", "/" })
                                         foreach (var i in Functions.getPermutations(new string[] { a.ToString(), b.ToString(), c.ToString(), d.ToString() }, 4))
                                         {
-                                            try { RPN.Add(getReversePolishNotation(new string[] { i.ElementAt(0), i.ElementAt(1), i.ElementAt(2), i.ElementAt(3), op1, op2, op3 })); }
+                                            try { RPN.Add(getReversePolishNotation(new string[] { i.ElementAt(0), i.ElementAt(1), op1, i.ElementAt(2), op2, i.ElementAt(3), op3 })); }
                                             catch { }
-                                            try { RPN.Add(getReversePolishNotation(new string[] { i.ElementAt(0), i.ElementAt(1), i.ElementAt(2), op1, i.ElementAt(3), op2, op3 })); }
+                                            try { RPN.Add(getReversePolishNotation(new string[] { i.ElementAt(0), i.ElementAt(1), i.ElementAt(2), op1, op2, i.ElementAt(3), op3 })); }
+                                            catch { }
+                                            try { RPN.Add(getReversePolishNotation(new string[] { i.ElementAt(0), i.ElementAt(1), op1, i.ElementAt(2), i.ElementAt(3), op2, op3 })); }
                                             catch { }
                                         }
                             RPN.RemoveWhere(n => n <= 0 || n % 1 != 0);
                             double[] rpn = RPN.ToArray();
                             int currentCount = 0;
-                            for (int i = 0; i < RPN.Count; i++)
+                            for (int i = 0; i < RPN.Count - 1; i++)
                             {
                                 if (rpn[i] + 1 == rpn[i + 1]) currentCount++;
                                 else break;
