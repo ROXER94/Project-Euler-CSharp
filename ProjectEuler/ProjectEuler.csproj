@@ -190,6 +190,7 @@
     <Compile Include="Problem581.cs" />
     <Compile Include="Problem587.cs" />
     <Compile Include="Problem604.cs" />
+    <Compile Include="Problem622.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
