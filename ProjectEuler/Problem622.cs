@@ -1,5 +1,6 @@
-﻿using ProjectEuler.Common;
+using ProjectEuler.Common;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace ProjectEuler
@@ -7,11 +8,15 @@ namespace ProjectEuler
     partial class ProjectEuler
     {
         /// <summary>
-        /// Calculates the sum of all values of n that satisfy s(n)=60
+        /// Calculates the sum of all values of n that satisfy s(n) = 60
         /// </summary>
         static void P622()
         {
-            Console.WriteLine((from n in Functions.getFactors((long)Math.Pow(2, 60) - 1) where Functions.getMultiplicativeOrder(2, (int)n) == 60 select n + 1).Sum());
+            int e = 60;
+            SortedSet<long> factors1 = Functions.getFactors((long)Math.Pow(2, e / 2) + 1);
+            SortedSet<long> factors2 = Functions.getFactors((long)Math.Pow(2, e / 2) - 1);
+            var Factors = (from i in factors1 from j in factors2 select i * j);
+            Console.WriteLine((from n in Factors where Functions.getMultiplicativeOrder(2, (int)n) == 60 select n + 1).Sum());
         }
     }
 }
