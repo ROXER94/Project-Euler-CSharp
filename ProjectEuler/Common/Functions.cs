@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
@@ -86,7 +86,7 @@ namespace ProjectEuler.Common
             foreach (T item in input)
             {
                 if (index != indexToSkip) yield return item;
-                index ++;
+                index++;
             }
         }
 
@@ -217,6 +217,23 @@ namespace ProjectEuler.Common
         }
 
         /// <summary>
+        /// Gets n! of a number via memoization in constant space
+        /// </summary>
+        /// <param name="n">Int</param>
+        /// <returns>The Factorial of n</returns>
+        public static BigInteger getFactorial2(int n)
+        {
+            BigInteger a = 1;
+            BigInteger b = 1;
+            for (int i = 1; i <= n; i++)
+            {
+                if (i % 2 == 0) a = b * i;
+                else b = a * i;
+            }
+            return n % 2 == 0 ? a : b;
+        }
+
+        /// <summary>
         /// Dictionary used to memoize the Fibonacci sequence
         /// </summary>
         static IDictionary<int, BigInteger> fibDict = new Dictionary<int, BigInteger>();
@@ -247,13 +264,31 @@ namespace ProjectEuler.Common
         }
 
         /// <summary>
+        /// Gets the nth Fibonacci number via memoization in constant space
+        /// </summary>
+        /// <param name="n">Int</param>
+        /// <returns>The nth Fibonacci number</returns>
+        public static BigInteger getFibonacci2(int n)
+        {
+            BigInteger a = 0;
+            BigInteger b = 1;
+            for (int i = 0; i < n; i++)
+            {
+                if (i % 2 == 0) a += b;
+                else b += a;
+            }
+            return n % 2 == 0 ? a : b;
+        }
+
+        /// <summary>
         /// Gets the nth Fibonacci number via Binet's Formula
         /// </summary>
-        /// <param name="n">BigInteger</param>
+        /// <param name="n">Int</param>
         /// <returns>The nth Fibonacci number</returns>
         public static BigInteger getFibonacciBinet(int n)
         {
-            return (BigInteger)((BigInteger.Pow((BigInteger)(1 + Math.Sqrt(5)), n) - BigInteger.Pow((BigInteger)(1 - Math.Sqrt(5)), n)) / (BigInteger.Pow((BigInteger)2, n) * (BigInteger)Math.Sqrt(5)));
+            double phi = (1 + Math.Sqrt(5)) / 2;
+            return (BigInteger)Math.Round((Math.Pow(phi, n) - Math.Pow(-1 / phi, n)) / Math.Sqrt(5));
         }
 
         /// <summary>
@@ -617,11 +652,11 @@ namespace ProjectEuler.Common
                 BigInteger pNext = aNext * pCur + pPrev;
                 BigInteger qNext = aNext * qCur + qPrev;
                 pPrev = pCur;
-		        qPrev = qCur;
-		        uCur = uNext;
-		        vCur = vNext;
-		        aCur = aNext;
-		        pCur = pNext;
+                qPrev = qCur;
+                uCur = uNext;
+                vCur = vNext;
+                aCur = aNext;
+                pCur = pNext;
                 qCur = qNext;
                 count++;
             }
@@ -635,7 +670,7 @@ namespace ProjectEuler.Common
         /// <returns>An array containing the Moebius Function values from 1 to n</returns>
         public static int[] getMoebius(int n)
         {
-            int[] mu = new int[n+1];
+            int[] mu = new int[n + 1];
             for (int i = 0; i <= n; i++) mu[i] = 1;
             for (int i = 2; i <= Math.Sqrt(n); i++)
             {
@@ -643,7 +678,7 @@ namespace ProjectEuler.Common
                 {
                     for (int j = i; j <= n; j += i)
                         mu[j] *= -i;
-                    for (int j = i*i; j <= n; j += i*i)
+                    for (int j = i * i; j <= n; j += i * i)
                         mu[j] *= 0;
                 }
             }
@@ -691,6 +726,23 @@ namespace ProjectEuler.Common
         public static int getRadical(int n)
         {
             return (int)(from i in new HashSet<long>(Functions.getPrimeFactors(n)) select i).Aggregate((long)1, (a, x) => a * x);
+        }
+
+        /// <summary>
+        /// Dictionary used to memoize 
+        /// </summary>
+        static int[] factorialLastDigitDict = { 1, 1, 2, 6, 4, 2, 2, 4, 2, 8 };
+
+        /// <summary>
+        /// Gets the last digit of a factorial
+        /// </summary>
+        /// <param name="n">Long</param>
+        /// <returns>The last digit of n!</returns>
+        public static int getFactorialLastDigit(long n)
+        {
+            if (n < 10) return factorialLastDigitDict[n];
+            if (((n / 10) % 10) % 2 == 0) return (6 * getFactorialLastDigit(n / 5) * factorialLastDigitDict[n % 10]) % 10;
+            else return (4 * getFactorialLastDigit(n / 5) * factorialLastDigitDict[n % 10]) % 10;
         }
 
         /// <summary>
