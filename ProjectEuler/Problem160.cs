@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace ProjectEuler
 {
@@ -16,12 +16,13 @@ namespace ProjectEuler
             long b = 1;
             long c = (long)Math.Pow(10, e);
             long current;
+            long mod = n > c ? n : c;
             for (long i = 1; i <= n; i++)
             {
                 current = i % 2 == 0 ? b * i : a * i;
                 while (current % 10 == 0) { current /= 10; }
-                if (i % 2 == 0) a = current % (n > c ? n : c);
-                else b = current % (n > c ? n : c);
+                if (i % 2 == 0) a = current % mod;
+                else b = current % mod;
             }
             return n % 2 == 0 ? a % c : b % c;
         }
