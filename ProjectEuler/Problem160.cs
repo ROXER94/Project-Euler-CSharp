@@ -5,11 +5,11 @@ namespace ProjectEuler
     partial class ProjectEuler
     {
         /// <summary>
-        /// Get the last digits of a factorial
+        /// Get the last non-zero digits of a factorial
         /// </summary>
         /// <param name="n">Long</param>
         /// <param name="e">Int</param>
-        /// <returns>The last e digits of n!</returns>
+        /// <returns>The last e non-zero digits of n!</returns>
         public static long getFactorialLastDigits(long n, int e)
         {
             long a = 1;
@@ -28,7 +28,7 @@ namespace ProjectEuler
         }
 
         /// <summary>
-        /// Calculates the last five digits in 1,000,000,000,000!
+        /// Calculates the last five non-zero digits in 1,000,000,000,000!
         /// </summary>
         static void P160()
         {
