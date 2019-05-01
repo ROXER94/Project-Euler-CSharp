@@ -729,15 +729,15 @@ namespace ProjectEuler.Common
         }
 
         /// <summary>
-        /// Dictionary used to memoize 
+        /// Dictionary used to memoize the last non-zero digit in a factorial
         /// </summary>
         static int[] factorialLastDigitDict = { 1, 1, 2, 6, 4, 2, 2, 4, 2, 8 };
 
         /// <summary>
-        /// Gets the last digit of a factorial
+        /// Gets the last non-zero digit of a factorial
         /// </summary>
         /// <param name="n">Long</param>
-        /// <returns>The last digit of n!</returns>
+        /// <returns>The last non-zero digit of n!</returns>
         public static int getFactorialLastDigit(long n)
         {
             if (n < 10) return factorialLastDigitDict[n];
