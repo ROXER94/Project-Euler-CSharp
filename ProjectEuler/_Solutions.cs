@@ -1,4 +1,4 @@
-﻿namespace ProjectEuler
+namespace ProjectEuler
 {
     public partial class ProjectEuler
     {
@@ -102,6 +102,7 @@
             //P101();
             //P102();
             //P104();
+            //P107();
             //P108();
             //P110();
             //P112();
