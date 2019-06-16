@@ -703,8 +703,7 @@ namespace ProjectEuler.Common
         /// <returns>Smallest k such that a^k = 1 (mod n)</returns>
         public static int getMultiplicativeOrder(int a, int n)
         {
-            if (Functions.getGCD(a, n) != 1)
-                return -1;
+            if (Functions.getGCD(a, n) != 1) throw new System.ArgumentException("Integers a and n are not relatively prime integers");
             int r = 1;
             int k = 1;
             while (k < n)
@@ -714,7 +713,7 @@ namespace ProjectEuler.Common
                     return k;
                 k++;
             }
-            return -1;
+            throw new System.ArgumentException("Integers a and n are not relatively prime integers");
         }
 
         /// <summary>
