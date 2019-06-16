@@ -747,17 +747,20 @@ namespace ProjectEuler.Common
         /// Gets the solution to a system of simultaneous linear congruences via the Chinese Remainder Theorem
         /// </summary>
         /// <param name="relativePrimes">List</param>
-        /// <param name="solutions">List</param>
+        /// <param name="remainders">List</param>
         /// <returns>The minimum solution to a system of simultaneous linear congruences</returns>
-        public static long getChineseRemainderTheorem(List<int> relativePrimes, List<int> solutions)
+        public static long getChineseRemainderTheorem(List<int> relativePrimes, List<int> remainders)
         {
-            if (relativePrimes.Count <= 1) throw new System.ArgumentException("Length of array of relative primes must be greater than one");
-            if (((from i in relativePrimes from j in relativePrimes.GetRange(relativePrimes.IndexOf(i) + 1, relativePrimes.Count - relativePrimes.IndexOf(i) - 1) select Functions.getGCD(i, j)).Max() != 1)) throw new System.ArgumentException("Array of relative primes is not a collection of pairwise relatively prime integers");
-            if (relativePrimes.Count != solutions.Count) throw new System.ArgumentException("Array of relative primes and array of solutions are not the same length");
+            if (relativePrimes.Count <= 1)
+                throw new System.ArgumentException("Length of array of relative primes must be greater than one");
+            if (((from i in relativePrimes from j in relativePrimes.GetRange(relativePrimes.IndexOf(i) + 1, relativePrimes.Count - relativePrimes.IndexOf(i) - 1) select Functions.getGCD(i, j)).Max() != 1))
+                throw new System.ArgumentException("Array of relative primes is not a collection of pairwise relatively prime integers");
+            if (relativePrimes.Count != remainders.Count)
+                throw new System.ArgumentException("Array of relative primes and array of remainders are not the same length");
             long M = relativePrimes.Aggregate((long)1, (a, x) => a * x);
             long[] mArray = (from i in relativePrimes select M / i).ToArray();
             long[] yArray = (from i in relativePrimes select Functions.getModInverse(mArray[relativePrimes.IndexOf(i)] % i, i)).ToArray();
-            return (from i in solutions.Zip(mArray, (x, y) => x * y).Zip(yArray, (x, y) => x * y) select i).Sum() % M;
+            return (from i in remainders.Zip(mArray, (x, y) => x * y).Zip(yArray, (x, y) => x * y) select i).Sum() % M;
         }
 
         #endregion Getter Functions
