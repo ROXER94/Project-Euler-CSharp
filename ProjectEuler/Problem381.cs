@@ -1,4 +1,4 @@
-﻿using ProjectEuler.Common;
+using ProjectEuler.Common;
 using System;
 
 namespace ProjectEuler
@@ -16,8 +16,8 @@ namespace ProjectEuler
             primes.Remove(3);
             foreach (int p in primes)
             {
-                int modInverse = -3 * Functions.getModInverse(8, p);
-                ans += (long)(modInverse - p * Math.Floor((double)modInverse / p));
+                long modInverse = -3 * Functions.getModInverse(8, p);
+                ans += modInverse - (long)(p * Math.Floor((double)modInverse / p));
             }
             Console.WriteLine(ans);
         }
