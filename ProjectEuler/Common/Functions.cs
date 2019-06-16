@@ -486,27 +486,27 @@ namespace ProjectEuler.Common
         /// <summary>
         /// Gets g, a, and b, such that ax + by = g, via the Extended Euclidean Algorithm
         /// </summary>
-        /// <param name="a">Int</param>
-        /// <param name="b">Int</param>
+        /// <param name="a">Long</param>
+        /// <param name="b">Long</param>
         /// <returns>The Extended Euclidean Algorithm: g (the divisor), a, and b, such that a * x + b * y = g</returns>
-        public static Tuple<int, int, int> getExtendedGCD(int a, int b)
+        public static Tuple<long, long, long> getExtendedGCD(long a, long b)
         {
-            if (a == 0) return Tuple.Create(b, 0, 1);
-            Tuple<int, int, int> egcd = getExtendedGCD(b % a, a);
+            if (a == 0) return Tuple.Create(b, (long)0, (long)1);
+            Tuple<long, long, long> egcd = getExtendedGCD(b % a, a);
             return Tuple.Create(egcd.Item1, egcd.Item3 - b / a * egcd.Item2, egcd.Item2);
         }
 
         /// <summary>
         /// Gets Modular Inverse of a mod m
         /// </summary>
-        /// <param name="a">Int</param>
-        /// <param name="m">Int</param>
+        /// <param name="a">Long</param>
+        /// <param name="m">Long</param>
         /// <returns>The Modular Inverse of a and m: ax % m == 1</returns>
-        public static int getModInverse(int a, int m)
+        public static long getModInverse(long a, long m)
         {
-            Tuple<int, int, int> egcd = getExtendedGCD(a, m);
+            Tuple<long, long, long> egcd = getExtendedGCD(a, m);
             if (egcd.Item1 != 1) throw new System.ArgumentException("Mod Inverse does not exist", "a%m");
-            return egcd.Item2 % m;
+            return egcd.Item2 % m < 0 ? (egcd.Item2 + m) % m : egcd.Item2 % m;
         }
 
         /// <summary>
@@ -521,7 +521,6 @@ namespace ProjectEuler.Common
             double s = (a + b + c) / 2;
             return Math.Sqrt(s * (s - a) * (s - b) * (s - c));
         }
-
 
         /// <summary>
         /// Gets the sum of the squares of 1 to a number
@@ -751,14 +750,14 @@ namespace ProjectEuler.Common
         /// <param name="relativePrimes">List</param>
         /// <param name="solutions">List</param>
         /// <returns>The minimum solution to a system of simultaneous linear congruences</returns>
-        public static int getChineseRemainderTheorem(List<int> relativePrimes, List<int> solutions)
+        public static long getChineseRemainderTheorem(List<int> relativePrimes, List<int> solutions)
         {
             if (relativePrimes.Count <= 1) throw new System.ArgumentException("Length of array of relative primes must be greater than one");
             if (((from i in relativePrimes from j in relativePrimes.GetRange(relativePrimes.IndexOf(i) + 1, relativePrimes.Count - relativePrimes.IndexOf(i) - 1) select Functions.getGCD(i, j)).Max() != 1)) throw new System.ArgumentException("Array of relative primes is not a collection of pairwise relatively prime integers");
             if (relativePrimes.Count != solutions.Count) throw new System.ArgumentException("Array of relative primes and array of solutions are not the same length");
-            int M = (int)relativePrimes.Aggregate((long)1, (a, x) => a * x);
-            int[] mArray = (from i in relativePrimes select M / i).ToArray();
-            int[] yArray = (from i in relativePrimes select Functions.getModInverse(mArray[relativePrimes.IndexOf(i)] % i, i)).ToArray();
+            long M = relativePrimes.Aggregate((long)1, (a, x) => a * x);
+            long[] mArray = (from i in relativePrimes select M / i).ToArray();
+            long[] yArray = (from i in relativePrimes select Functions.getModInverse(mArray[relativePrimes.IndexOf(i)] % i, i)).ToArray();
             return (from i in solutions.Zip(mArray, (x, y) => x * y).Zip(yArray, (x, y) => x * y) select i).Sum() % M;
         }
 
