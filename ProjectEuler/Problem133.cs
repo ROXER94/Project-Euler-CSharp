@@ -7,10 +7,10 @@ namespace ProjectEuler
     partial class ProjectEuler
     {
         /// <summary>
-        /// Determines if a number is composed of 2's and/or 5's
+        /// Determines if a number is composed of 2's and 5's
         /// </summary>
         /// <param name="n">Int</param>
-        /// <returns>True if n is composed of 2's and/or 5's</returns>
+        /// <returns>True if n is composed of 2's and 5's</returns>
         static bool isComposedOf2and5(int n)
         {
             if (n == 0) return true;
