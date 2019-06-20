@@ -505,7 +505,7 @@ namespace ProjectEuler.Common
         public static long getModInverse(long a, long m)
         {
             Tuple<long, long, long> egcd = getExtendedGCD(a, m);
-            if (egcd.Item1 != 1) throw new System.ArgumentException("Mod Inverse does not exist", "a%m");
+            if (egcd.Item1 != 1) throw new System.ArgumentException("Mod Inverse does not exist", "a % m");
             return egcd.Item2 % m < 0 ? (egcd.Item2 + m) % m : egcd.Item2 % m;
         }
 
