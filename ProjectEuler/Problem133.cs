@@ -24,7 +24,7 @@ namespace ProjectEuler
         /// </summary>
         static void P133()
         {
-            Console.WriteLine((from p in Functions.getPrimesList(100000) where Functions.getGCD(10, (int)p) == 1 && !isComposedOf2and5(Functions.getMultiplicativeOrder(10, (int)p)) select p).Sum() + 10);
+            Console.WriteLine((from p in Functions.getPrimesList(100000) where Functions.getGCD(10, p) == 1 && !isComposedOf2and5(Functions.getMultiplicativeOrder(10, p)) select p).Sum() + 10);
         }
     }
 }
