@@ -700,20 +700,20 @@ namespace ProjectEuler.Common
         /// </summary>
         /// <param name="a">Int</param>
         /// <param name="n">Int</param>
-        /// <returns>Smallest k such that a^k = 1 (mod n)</returns>
-        public static int getMultiplicativeOrder(int a, int n)
+        /// <returns>Smallest k such that a^k ≡ 1 (mod n)</returns>
+        public static int getMultiplicativeOrder(int a, long n)
         {
+            if (n == 1) throw new System.ArgumentException("Integer modulus n must be greater than 1");
             if (Functions.getGCD(a, n) != 1) throw new System.ArgumentException("Integers a and n are not relatively prime integers");
-            int r = 1;
+            long r = 1;
             int k = 1;
             while (k < n)
             {
                 r = r * a % n;
-                if (r == 1)
-                    return k;
+                if (r == 1) return k;
                 k++;
             }
-            throw new System.ArgumentException("Integers a and n are not relatively prime integers");
+            throw new System.ArgumentException("Integer overflow");
         }
 
         /// <summary>
