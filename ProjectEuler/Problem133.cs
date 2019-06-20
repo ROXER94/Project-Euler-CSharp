@@ -13,7 +13,7 @@ namespace ProjectEuler
         /// <returns>True if n is composed of 2's and/or 5's</returns>
         static bool isComposedOf2and5(int n)
         {
-            if (n == 0) return false;
+            if (n == 0) return true;
             while (n % 2 == 0) n /= 2;
             while (n % 5 == 0) n /= 5;
             return n == 1;
