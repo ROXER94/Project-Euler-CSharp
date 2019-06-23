@@ -58,7 +58,7 @@ namespace ProjectEuler
                 for (int c = 0; c < board.GetLength(1); c++)
                     if (board[r, c] == 0)
                         return Tuple.Create(r, c);
-            throw new System.ArgumentException("Input board has no available cells");
+            throw new System.ArgumentException("Sudoku board has no available cells");
         }
 
         /// <summary>
