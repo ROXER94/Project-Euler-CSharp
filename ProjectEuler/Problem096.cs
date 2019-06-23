@@ -201,7 +201,7 @@ namespace ProjectEuler
         /// </summary>
         /// <param name="sudoku">Int[,]</param>
         /// <param name="sudokuFile">StreamReader</param>
-        static void readSudoku(int[,] sudoku, StreamReader sudokuFile)
+        static void readSudokuBoard(int[,] sudoku, StreamReader sudokuFile)
         {
             for (int i = 0; i < 9; i++)
             {
@@ -238,7 +238,7 @@ namespace ProjectEuler
                 int[,] sudokuBoard = new int[9, 9];
                 while (sudokuFile.ReadLine() != null)
                 {
-                    readSudoku(sudokuBoard, sudokuFile);
+                    readSudokuBoard(sudokuBoard, sudokuFile);
                     List<int>[,] candidateBoard = Functions.getDeepCopy<List<int>[,]>(candidateBoardBase);
                     updateSudokuBoards(sudokuBoard, candidateBoard);
                     int[,] solution = getSudokuSolution(sudokuBoard, candidateBoard);
