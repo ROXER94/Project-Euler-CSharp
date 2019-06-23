@@ -1,7 +1,9 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Numerics;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace ProjectEuler.Common
 {
@@ -24,12 +26,24 @@ namespace ProjectEuler.Common
         }
 
         /// <summary>
+        /// Converts Array to IEnumerable
+        /// </summary>
+        /// <typeparam name="T">Type</typeparam>
+        /// <param name="input">Array</param>
+        /// <returns>IEnumerable</returns>
+        public static IEnumerable<T> ToEnumerable<T>(Array input)
+        {
+            foreach (var item in input)
+                yield return (T)item;
+        }
+
+        /// <summary>
         /// Converts IEnumerable to HashSet
         /// </summary>
         /// <typeparam name="T">Type</typeparam>
-        /// <param name="enumerable">IEnumerable</param>
-        /// <returns>Returns HashSet</returns>
-        public static HashSet<T> ToHashSet<T>(this IEnumerable<T> input)
+        /// <param name="input">IEnumerable</param>
+        /// <returns>HashSet</returns>
+        public static HashSet<T> ToHashSet<T>(IEnumerable<T> input)
         {
             HashSet<T> hs = new HashSet<T>();
             foreach (T item in input)
@@ -38,7 +52,7 @@ namespace ProjectEuler.Common
         }
 
         /// <summary>
-        /// Gets the permutations of a series of items
+        /// Gets the permutations of an IEnumerable
         /// </summary>
         /// <typeparam name="T">Type</typeparam>
         /// <param name="input">IEnumerable</param>
@@ -90,9 +104,86 @@ namespace ProjectEuler.Common
             }
         }
 
+        /// <summary>
+        /// Gets the enumeration of an IEnumerable 
+        /// </summary>
+        /// <typeparam name="T">Type</typeparam>
+        /// <param name="items">IEnumerable</param>
+        /// <returns>All enumerated KeyValuePairs of the input<</returns>
+        public static IEnumerable<KeyValuePair<int, T>> getEnumerate<T>(IEnumerable<T> input)
+        {
+            return input.Select((item, key) => new KeyValuePair<int, T>(key, item));
+        }
+
+        /// <summary>
+        /// Deep copies an object
+        /// </summary>
+        /// <typeparam name="T">Type</typeparam>
+        /// <param name="objectToCopy">Object</param>
+        /// <returns>A deep copy of an object</returns>
+        public static T getDeepCopy<T>(object objectToCopy)
+        {
+            using (MemoryStream memoryStream = new MemoryStream())
+            {
+                BinaryFormatter binaryFormatter = new BinaryFormatter();
+                binaryFormatter.Serialize(memoryStream, objectToCopy);
+                memoryStream.Seek(0, SeekOrigin.Begin);
+                return (T)binaryFormatter.Deserialize(memoryStream);
+            }
+        }
+
+        /// <summary>
+        /// Gets the row of an int[,] array
+        /// </summary>
+        /// <param name="array">Int[,]</param>
+        /// <param name="row">Int</param>
+        /// <returns>The row of an int[,] array</returns>
+        public static int[] GetArrayRow(int[,] array, int row)
+        {
+            int width = array.GetLength(1);
+            int height = array.GetLength(0);
+            if (row >= height) throw new IndexOutOfRangeException("Row index out of range");
+            int[] returnRow = new int[width];
+            for (var i = 0; i < width; i++)
+                returnRow[i] = array[row, i];
+            return returnRow;
+        }
+
+        /// <summary>
+        /// Gets the column of an int[,] array
+        /// </summary>
+        /// <param name="array">Int[,]</param>
+        /// <param name="col">Int</param>
+        /// <returns>The column of an int[,] array</returns>
+        public static int[] GetArrayColumn(int[,] array, int col)
+        {
+            int width = array.GetLength(0);
+            int height = array.GetLength(1);
+            if (col >= height) throw new IndexOutOfRangeException("Column index out of range");
+            int[] returnCol = new int[width];
+            for (var i = 0; i < width; i++)
+                returnCol[i] = array[i, col];
+            return returnCol;
+        }
+
         #endregion Helper Functions
 
         #region Boolean Functions
+
+        /// <summary>
+        /// Determines if an array contains duplicates, ignoring elements of the exclude array
+        /// </summary>
+        /// <param name="array">Int[]</param>
+        /// <param name="exclude">Int[]</param>
+        /// <returns>True if an array has duplicates, ignoring elements of the exclude array</returns>
+        public static bool hasDuplicates(int[] array, int[] exclude = null)
+        {
+            for (int i = 0; i < array.Length - 1; i++)
+                for (int j = i + 1; j < array.Length; j++)
+                    if (array[i] == array[j] && (exclude == null || !exclude.Contains(array[i])))
+                        return true;
+            return false;
+        }
 
         /// <summary>
         /// Determines if string1 is an anagram of string2
