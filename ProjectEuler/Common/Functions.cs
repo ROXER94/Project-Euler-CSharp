@@ -31,7 +31,7 @@ namespace ProjectEuler.Common
         /// <typeparam name="T">Type</typeparam>
         /// <param name="input">Array</param>
         /// <returns>IEnumerable</returns>
-        public static IEnumerable<T> ToEnumerable<T>(Array input)
+        public static IEnumerable<T> ToIEnumerable<T>(Array input)
         {
             foreach (var item in input)
                 yield return (T)item;
