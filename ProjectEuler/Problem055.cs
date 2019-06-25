@@ -12,7 +12,7 @@ namespace ProjectEuler
         /// </summary>
         /// <param name="n">BigInteger</param>
         /// <returns>The sum of n and the reverse of n</returns>
-        public static BigInteger getLychrel(BigInteger n)
+        static BigInteger getLychrel(BigInteger n)
         {
             return n + BigInteger.Parse(new String(n.ToString().ToCharArray().Reverse().ToArray()));
         }
