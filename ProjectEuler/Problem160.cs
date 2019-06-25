@@ -10,7 +10,7 @@ namespace ProjectEuler
         /// <param name="n">Long</param>
         /// <param name="e">Int</param>
         /// <returns>The last e non-zero digits of n!</returns>
-        public static long getFactorialLastDigits(long n, int e)
+        static long getFactorialLastDigits(long n, int e)
         {
             long a = 1;
             long b = 1;
