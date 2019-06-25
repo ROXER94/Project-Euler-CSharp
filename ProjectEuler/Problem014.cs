@@ -15,7 +15,7 @@ namespace ProjectEuler
         /// </summary>
         /// <param name="n">Long</param>
         /// <returns>The length of the Collatz sequence of n</returns>
-        public static long getCollatz(long n)
+        static long getCollatz(long n)
         {
             if (!collatzDict.ContainsKey(n))
                 collatzDict[n] = getCollatzUncached(n);
@@ -27,7 +27,7 @@ namespace ProjectEuler
         /// </summary>
         /// <param name="n">Long</param>
         /// <returns>The length of the Collatz sequence of n</returns>
-        public static long getCollatzUncached(long n)
+        static long getCollatzUncached(long n)
         {
             if (n == 1) return 1;
             else if (n % 2 != 0) return 2 + getCollatz((3 * n + 1) / 2);
