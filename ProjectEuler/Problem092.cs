@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -16,7 +16,7 @@ namespace ProjectEuler
         /// </summary>
         /// <param name="n">Int</param>
         /// <returns>True if n is a happy number</returns>
-        public static bool isHappy(int n)
+        static bool isHappy(int n)
         {
             if (!happyDict.ContainsKey(n))
                 happyDict[n] = isHappyUncached(n);
@@ -28,7 +28,7 @@ namespace ProjectEuler
         /// </summary>
         /// <param name="n">Int</param>
         /// <returns>True if n is a happy number</returns>
-        public static bool isHappyUncached(int n)
+        static bool isHappyUncached(int n)
         {
             int s = (from c in n.ToString() select (int)Math.Pow(Char.GetNumericValue(c), 2)).Sum();
             if (s == 1) return true;
