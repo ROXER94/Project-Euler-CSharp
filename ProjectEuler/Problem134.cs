@@ -1,4 +1,4 @@
-﻿using ProjectEuler.Common;
+using ProjectEuler.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,8 +18,8 @@ namespace ProjectEuler
             primes.Remove(3);
             for (int i = 0; i < primes.Count - 1; i++)
             {
-                long p1 = primes.ElementAt(i);
-                long p2 = primes.ElementAt(i + 1);
+                long p1 = primes[i];
+                long p2 = primes[i + 1];
                 ans += Functions.getChineseRemainderTheorem(new List<int> { (int)p2, (int)Math.Pow(10, p1.ToString().Length) }, new List<int> { 0, (int)p1 });
             }
             Console.WriteLine(ans);
