@@ -553,6 +553,19 @@ namespace ProjectEuler.Common
         }
 
         /// <summary>
+        /// Gets the slope between two points
+        /// </summary>
+        /// <param name="x1">Double</param>
+        /// <param name="y1">Double</param>
+        /// <param name="x2">Double</param>
+        /// <param name="y2">Double</param>
+        /// <returns>The slope between (x1,y1) and (x2,y2)</returns>
+        public static double getSlope(double x1, double y1, double x2, double y2)
+        {
+            return (y2 - y1) / (x2 - x1);
+        }
+
+        /// <summary>
         /// Gets the Greatest Common Divisor of two numbers
         /// </summary>
         /// <param name="a">Long</param>
