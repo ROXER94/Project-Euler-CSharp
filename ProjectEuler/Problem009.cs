@@ -1,11 +1,11 @@
-﻿using System;
+using System;
 
 namespace ProjectEuler
 {
     partial class ProjectEuler
     {
         /// <summary>
-        /// Calculates the product of a Pythagoream triplet that sums to 1000
+        /// Calculates the product of a Pythagorean triplet that sums to 1000
         /// </summary>
         static void P009()
         {
