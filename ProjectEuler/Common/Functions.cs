@@ -529,8 +529,7 @@ namespace ProjectEuler.Common
         public static BigInteger getnCk(int n, int k)
         {
             BigInteger r = 1;
-            if (k > n)
-                return 0;
+            if (k > n) return 0;
             for (int d = 1; d <= k; d++)
             {
                 r *= n--;
