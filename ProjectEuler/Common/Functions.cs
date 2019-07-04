@@ -531,7 +531,7 @@ namespace ProjectEuler.Common
             BigInteger r = 1;
             if (k > n)
                 return 0;
-            for (long d = 1; d <= k; d++)
+            for (int d = 1; d <= k; d++)
             {
                 r *= n--;
                 r /= d;
