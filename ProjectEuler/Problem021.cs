@@ -7,7 +7,7 @@ namespace ProjectEuler
     partial class ProjectEuler
     {
         /// <summary>
-        /// Calculates the sum of all amicable numbers under 10000
+        /// Calculates the sum of all amicable numbers under 10,000
         /// </summary>
         static void P021()
         {
