@@ -11,15 +11,10 @@ namespace ProjectEuler
         /// Determines if a number is abundant
         /// </summary>
         /// <param name="n">Int</param>
-        /// <returns>True if abundant</returns>
+        /// <returns>True if n is abundant</returns>
         static bool isAbundant(int n)
         {
-            List<int> factors = new List<int>();
-            for (int i = 1; i <= n / 2; i++)
-                if (n % i == 0)
-                    factors.Add(i);
-            if (factors.Sum() > n) return true;
-            return false;
+            return Functions.getFactors(n).Sum() > 2 * n;
         }
 
         /// <summary>
