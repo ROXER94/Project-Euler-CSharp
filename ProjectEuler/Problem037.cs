@@ -11,7 +11,7 @@ namespace ProjectEuler
         /// Truncates a number from the left side
         /// </summary>
         /// <param name="n">Int</param>
-        /// <returns>A list of truncated results</returns>
+        /// <returns>A list of left-truncated results</returns>
         static List<int> getTruncateLeft(int n)
         {
             List<int> list = new List<int>();
@@ -28,7 +28,7 @@ namespace ProjectEuler
         /// Truncates a number from the right side
         /// </summary>
         /// <param name="n">Int</param>
-        /// <returns>A list of truncated results</returns>
+        /// <returns>A list of right-truncated results</returns>
         static List<int> getTruncateRight(int n)
         {
 
