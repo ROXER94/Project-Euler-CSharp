@@ -42,14 +42,15 @@ namespace ProjectEuler
             return list;
         }
 
-
         /// <summary>
         ///  Calculates the sum of every two-sided truncatable prime
         /// </summary>
         static void P037()
         {
             int ans = 0;
-            foreach (int p in (from i in Enumerable.Range(11, 750000) where !i.ToString().Contains('5') && Functions.isPrime(i) select i))
+            List<long> primes = Functions.getPrimesList(750000);
+            primes.RemoveRange(0, 4);
+            foreach (int p in primes)
             {
                 bool b = true;
                 foreach (int i in getTruncateLeft(p).Concat(getTruncateRight(p)))
@@ -63,7 +64,7 @@ namespace ProjectEuler
                 }
                 if (b) ans += p;
             }
-            Console.WriteLine(ans + 53);
+            Console.WriteLine(ans);
         }
     }
 }
