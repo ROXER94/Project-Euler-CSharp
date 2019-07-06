@@ -53,7 +53,7 @@ namespace ProjectEuler
             foreach (int p in primes)
             {
                 bool b = true;
-                foreach (int i in getTruncateLeft(p).Concat(getTruncateRight(p)))
+                foreach (int i in getTruncateLeft(p).Union(getTruncateRight(p)))
                 {
                     if (Functions.isPrime(i)) continue;
                     else
