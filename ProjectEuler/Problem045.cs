@@ -7,7 +7,7 @@ namespace ProjectEuler
     partial class ProjectEuler
     {
         /// <summary>
-        ///  Calculates the next Triangle, Pentagonal, and Hexagonal number after 40755
+        ///  Calculates the next Triangle, Pentagonal, and Hexagonal number after 40,755
         /// </summary>
         static void P045()
         {
