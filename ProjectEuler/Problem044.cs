@@ -12,7 +12,7 @@ namespace ProjectEuler
         /// </summary>
         static void P044()
         {
-            var pentagon = Functions.ToHashSet(from i in Enumerable.Range(1, 2500) select Functions.getPentagon(i));
+            HashSet<long> pentagon = Functions.ToHashSet(from i in Enumerable.Range(1, 2500) select Functions.getPentagon(i));
             List<Tuple<long, long>> myTupleList = new List<Tuple<long, long>>();
             foreach (var p1 in pentagon)
                 foreach (var p2 in pentagon.ToList().GetRange(pentagon.ToList().IndexOf(p1) + 1, pentagon.ToList().Count - pentagon.ToList().IndexOf(p1) - 1))

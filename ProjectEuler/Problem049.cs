@@ -11,7 +11,7 @@ namespace ProjectEuler
         /// </summary>
         static void P049()
         {
-            var primes = from i in Functions.getPrimesList(10000) where i >= 1000 select i;
+            HashSet<long> primes = Functions.ToHashSet(from i in Functions.getPrimesList(10000) where i >= 1000 select i);
             foreach (int p in primes)
             {
                 if (primes.Contains(p + 3330) && primes.Contains(p + 6660) && p != 1487)

@@ -13,7 +13,7 @@ namespace ProjectEuler
         {
             HashSet<long> ans = new HashSet<long>();
             int limit = 50000000;
-            var primes = Functions.ToHashSet(Functions.getPrimesList((int)Math.Pow(limit, .5)));
+            HashSet<long> primes = Functions.ToHashSet(Functions.getPrimesList((int)Math.Pow(limit, .5)));
             for (int a = 2; a <= (int)Math.Pow(limit, .5); a++)
                 if (primes.Contains(a))
                     for (int b = 2; b <= (int)Math.Pow(limit, .3333); b++)
