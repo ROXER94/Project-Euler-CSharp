@@ -30,8 +30,10 @@ namespace ProjectEuler
                 List<int> accumulated = (primes.GetRange(index, primes.Count - index)).Select(w => sum += w).ToList();
                 var newPrimes = from j in
                                     (from i in accumulated
-                                     where i % 2 != 0 && i.ToString()[i.ToString().Length - 1] != '5' select i)
-                                where Functions.isPrime(j) select j;
+                                     where i % 2 != 0 && i % 5 != 0
+                                     select i)
+                                where Functions.isPrime(j)
+                                select j;
                 int currentCount = accumulated.IndexOf(newPrimes.Last()) + 1;
                 if (currentCount > maximumCount)
                 {
