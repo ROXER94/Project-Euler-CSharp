@@ -11,7 +11,7 @@ namespace ProjectEuler
         /// </summary>
         static void P048()
         {
-            Console.WriteLine(new String(Enumerable.Range(1, 1000).Select(i => BigInteger.ModPow(i, i, 10000000000)).Aggregate((sum, next) => sum + next).ToString().Reverse().Take(10).Reverse().ToArray()));
+            Console.WriteLine(Enumerable.Range(1, 1000).Select(i => BigInteger.ModPow(i, i, 10000000000)).Aggregate((sum, next) => sum + next) % 10000000000);
         }
     }
 }
