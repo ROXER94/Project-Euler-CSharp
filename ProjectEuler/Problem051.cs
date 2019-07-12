@@ -18,7 +18,7 @@ namespace ProjectEuler
             foreach (int ans in primes)
             {
                 int count = 0;
-                long i = ans;
+                int i = ans;
                 char r = ans.ToString().GroupBy(x => x).OrderByDescending(x => x.Count()).First().Key;
                 i = Int32.Parse(i.ToString().Replace(r, '0'));
                 if (primesDict.ContainsKey(i) && i.ToString().Length == 6) count++;
