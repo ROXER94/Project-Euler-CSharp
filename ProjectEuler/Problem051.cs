@@ -18,36 +18,27 @@ namespace ProjectEuler
             foreach (int ans in primes)
             {
                 int count = 0;
-                int i = ans;
-                char r = ans.ToString().GroupBy(x => x).OrderByDescending(x => x.Count()).First().Key;
-                i = Int32.Parse(i.ToString().Replace(r, '0'));
+                int i;
+                char c = ans.ToString().GroupBy(x => x).OrderByDescending(x => x.Count()).First().Key;
+                i = Int32.Parse(ans.ToString().Replace(c, '0'));
                 if (primesDict.ContainsKey(i) && i.ToString().Length == 6) count++;
-                i = ans;
-                i = Int32.Parse(i.ToString().Replace(r, '1'));
+                i = Int32.Parse(ans.ToString().Replace(c, '1'));
                 if (primesDict.ContainsKey(i)) count++;
-                i = ans;
-                i = Int32.Parse(i.ToString().Replace(r, '2'));
+                i = Int32.Parse(ans.ToString().Replace(c, '2'));
                 if (primesDict.ContainsKey(i)) count++;
-                i = ans;
-                i = Int32.Parse(i.ToString().Replace(r, '3'));
+                i = Int32.Parse(ans.ToString().Replace(c, '3'));
                 if (primesDict.ContainsKey(i)) count++;
-                i = ans;
-                i = Int32.Parse(i.ToString().Replace(r, '4'));
+                i = Int32.Parse(ans.ToString().Replace(c, '4'));
                 if (primesDict.ContainsKey(i)) count++;
-                i = ans;
-                i = Int32.Parse(i.ToString().Replace(r, '5'));
+                i = Int32.Parse(ans.ToString().Replace(c, '5'));
                 if (primesDict.ContainsKey(i)) count++;
-                i = ans;
-                i = Int32.Parse(i.ToString().Replace(r, '6'));
+                i = Int32.Parse(ans.ToString().Replace(c, '6'));
                 if (primesDict.ContainsKey(i)) count++;
-                i = ans;
-                i = Int32.Parse(i.ToString().Replace(r, '7'));
+                i = Int32.Parse(ans.ToString().Replace(c, '7'));
                 if (primesDict.ContainsKey(i)) count++;
-                i = ans;
-                i = Int32.Parse(i.ToString().Replace(r, '8'));
+                i = Int32.Parse(ans.ToString().Replace(c, '8'));
                 if (primesDict.ContainsKey(i)) count++;
-                i = ans;
-                i = Int32.Parse(i.ToString().Replace(r, '9'));
+                i = Int32.Parse(ans.ToString().Replace(c, '9'));
                 if (primesDict.ContainsKey(i)) count++;
                 if (count == 8)
                 {
