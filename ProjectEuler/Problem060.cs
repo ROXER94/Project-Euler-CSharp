@@ -15,15 +15,15 @@ namespace ProjectEuler
         /// <returns>True if concatentating any two primes yields another prime</returns>
         static bool evaluatePrimes(long[] primes, IDictionary<long, bool> primesDict)
         {
-            if (primes.ToList().Count == 2)
+            if (primes.Count() == 2)
                 return primesDict.ContainsKey(Int32.Parse(primes[0].ToString() + primes[1].ToString())) &&
                        primesDict.ContainsKey(Int32.Parse(primes[1].ToString() + primes[0].ToString()));
-            if (primes.ToList().Count == 3)
+            if (primes.Count() == 3)
                 return primesDict.ContainsKey(Int32.Parse(primes[0].ToString() + primes[2].ToString())) &&
                        primesDict.ContainsKey(Int32.Parse(primes[2].ToString() + primes[0].ToString())) &&
                        primesDict.ContainsKey(Int32.Parse(primes[1].ToString() + primes[2].ToString())) &&
                        primesDict.ContainsKey(Int32.Parse(primes[2].ToString() + primes[1].ToString()));
-            if (primes.ToList().Count == 4)
+            if (primes.Count() == 4)
                 return primesDict.ContainsKey(Int32.Parse(primes[0].ToString() + primes[3].ToString())) &&
                        primesDict.ContainsKey(Int32.Parse(primes[3].ToString() + primes[0].ToString())) &&
                        primesDict.ContainsKey(Int32.Parse(primes[1].ToString() + primes[3].ToString())) &&
@@ -44,7 +44,7 @@ namespace ProjectEuler
         /// <summary>
         /// Calculates the sum of a set of five primes for which any two primes concatenate to produce another prime
         /// </summary>
-        static void P060() 
+        static void P060()
         {
             IDictionary<long, bool> primesDict = Functions.getPrimesDict(85000000);
             List<long> primes = Functions.getPrimesList(85000000);
