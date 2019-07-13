@@ -12,7 +12,7 @@ namespace ProjectEuler
         /// </summary>
         /// <param name="primes">Long[]</param>
         /// <param name="primesDict">IDictionary</param>
-        /// <returns>True if concatentating any two primes yields another prime</returns>
+        /// <returns>True if concatenating any two primes yields another prime</returns>
         static bool evaluatePrimes(long[] primes, IDictionary<long, bool> primesDict)
         {
             if (primes.Count() == 2)
