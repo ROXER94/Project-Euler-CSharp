@@ -12,7 +12,7 @@ namespace ProjectEuler
         static void P053()
         {
             Console.WriteLine((from k in Enumerable.Range(1, 100)
-                               from n in Enumerable.Range(k, 100 - k +1)
+                               from n in Enumerable.Range(k, 100 - k + 1)
                                where Functions.getnCk(n, k) > 1000000 select 1).Count());
         }
     }
