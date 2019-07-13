@@ -40,7 +40,7 @@ namespace ProjectEuler
                     return Tuple.Create(9, numbers.Last());
                 // Flush
                 else
-                    return Tuple.Create(6, numbers.Last()); 
+                    return Tuple.Create(6, numbers.Last());
             }
             if (numbers.Distinct().Count() == 2)
                 // Full House
@@ -60,13 +60,8 @@ namespace ProjectEuler
                     numbers.Where(x => x.Equals(numbers[4])).Count() == 3)
                     return Tuple.Create(4, numbers[2]);
                 // Two Pairs
-                if (numbers.Where(x => x.Equals(numbers[0])).Count() == 2 &&
-                    numbers.Where(x => x.Equals(numbers[2])).Count() == 2 ||
-                    numbers.Where(x => x.Equals(numbers[0])).Count() == 2 &&
-                    numbers.Where(x => x.Equals(numbers[4])).Count() == 2 ||
-                    numbers.Where(x => x.Equals(numbers[2])).Count() == 2 &&
-                    numbers.Where(x => x.Equals(numbers[4])).Count() == 2)
-                    return Tuple.Create(3, Math.Max(numbers[1],numbers[3]));
+                else
+                    return Tuple.Create(3, Math.Max(numbers[1], numbers[3]));
             }
             // One Pair
             if (numbers.Distinct().Count() == 4)
