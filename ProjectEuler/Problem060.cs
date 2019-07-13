@@ -18,12 +18,12 @@ namespace ProjectEuler
             if (primes.Count() == 2)
                 return primesDict.ContainsKey(Int32.Parse(primes[0].ToString() + primes[1].ToString())) &&
                        primesDict.ContainsKey(Int32.Parse(primes[1].ToString() + primes[0].ToString()));
-            if (primes.Count() == 3)
+            else if (primes.Count() == 3)
                 return primesDict.ContainsKey(Int32.Parse(primes[0].ToString() + primes[2].ToString())) &&
                        primesDict.ContainsKey(Int32.Parse(primes[2].ToString() + primes[0].ToString())) &&
                        primesDict.ContainsKey(Int32.Parse(primes[1].ToString() + primes[2].ToString())) &&
                        primesDict.ContainsKey(Int32.Parse(primes[2].ToString() + primes[1].ToString()));
-            if (primes.Count() == 4)
+            else if (primes.Count() == 4)
                 return primesDict.ContainsKey(Int32.Parse(primes[0].ToString() + primes[3].ToString())) &&
                        primesDict.ContainsKey(Int32.Parse(primes[3].ToString() + primes[0].ToString())) &&
                        primesDict.ContainsKey(Int32.Parse(primes[1].ToString() + primes[3].ToString())) &&
