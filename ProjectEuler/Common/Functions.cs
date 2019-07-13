@@ -190,7 +190,7 @@ namespace ProjectEuler.Common
         /// </summary>
         /// <param name="str1">String</param>
         /// <param name="str2">String</param>
-        /// <returns>True if string1 is an anagram of string2</returns>
+        /// <returns>True if str1 is an anagram of str2</returns>
         public static bool isAnagram(string str1, string str2)
         {
             return String.Concat(str1.OrderBy(c => c)) == String.Concat(str2.OrderBy(c => c));
