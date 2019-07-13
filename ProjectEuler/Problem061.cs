@@ -8,14 +8,14 @@ namespace ProjectEuler
     partial class ProjectEuler
     {
         /// <summary>
-        /// Determines if two numbers are cyclic
+        /// Determines if two numbers are digit cyclic
         /// </summary>
         /// <param name="n">Long</param>
         /// <param name="m">Long</param>
-        /// <returns>True if the last two digits of n are the first two digits of the m</returns>
-        static bool isCyclic(long n, long m)
+        /// <returns>True if the last d digits of n are the first d digits of the m</returns>
+        static bool isCyclicDigits(long n, long m, int d)
         {
-            return n.ToString().Substring(2) == m.ToString().Substring(0, 2);
+            return n.ToString().Substring(n.ToString().Length - d) == m.ToString().Substring(0, d);
         }
 
         /// <summary>
@@ -32,16 +32,16 @@ namespace ProjectEuler
             foreach (var i in Functions.getPermutations(new List<IEnumerable<long>>() { triangles, squares, pentagons, hexagons, heptagons, octagons }, 6))
                 foreach (long a in i.ElementAt(0))
                     foreach (long b in i.ElementAt(1))
-                        if (isCyclic(a, b))
+                        if (isCyclicDigits(a, b, 2))
                             foreach (long c in i.ElementAt(2))
-                                if (isCyclic(b, c))
+                                if (isCyclicDigits(b, c, 2))
                                     foreach (long d in i.ElementAt(3))
-                                        if (isCyclic(c, d))
+                                        if (isCyclicDigits(c, d, 2))
                                             foreach (long e in i.ElementAt(4))
-                                                if (isCyclic(d, e))
+                                                if (isCyclicDigits(d, e, 2))
                                                     foreach (long f in i.ElementAt(5))
-                                                        if (isCyclic(e, f))
-                                                            if (isCyclic(f, a))
+                                                        if (isCyclicDigits(e, f, 2))
+                                                            if (isCyclicDigits(f, a, 2))
                                                             {
                                                                 Console.WriteLine(a + b + c + d + e + f);
                                                                 return;
