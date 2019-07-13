@@ -11,6 +11,7 @@ namespace ProjectEuler
         /// </summary>
         static void P059()
         {
+            int ans = 0;
             string[] cipher = File.ReadAllText(@"...\...\Resources\p059_cipher.txt").Split(',').Select(s => s.Replace("\"", "")).ToArray();
             for (int p1 = 97; p1 < 123; p1++)
                 for (int p2 = 97; p2 < 123; p2++)
@@ -22,7 +23,10 @@ namespace ProjectEuler
                         String text = String.Join("", (from s in A.Zip(B, (e1, e2) => new { e1, e2 }).Zip(C, (z1, e3) => Tuple.Create(z1.e1, z1.e2, e3)) select new String(new Char[3] { s.Item1, s.Item2, s.Item3 })).ToArray());
                         if (text.Contains(" the "))
                         {
-                            Console.WriteLine((from c in text select (int)c).Sum() + (Int32.Parse(cipher.Last()) ^ p1));
+                            ans += (from c in text select (int)c).Sum();
+                            if (A.Count() != C.Count()) ans += Int32.Parse(cipher.Last()) ^ p1;
+                            if (B.Count() != C.Count()) ans += Int32.Parse(cipher[cipher.Count() - 2]) ^ p2;
+                            Console.WriteLine(ans);
                             return;
                         }
                     }
