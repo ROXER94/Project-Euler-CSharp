@@ -491,13 +491,12 @@ namespace ProjectEuler.Common
         /// Gets the totient functions of numbers from 1 to n
         /// </summary>
         /// <param name="n">Int</param>
-        /// <returns>The totient functions of numbers from 1 to n</returns>
-        public static IEnumerable<int> getTotients(int n)
+        /// <returns>The totient functions of numbers from 0 to n</returns>
+        public static int[] getTotients(int n)
         {
             int[] phi = new int[n + 1];
             phi[1] = 1;
             for (int i = 1; i <= n; i++)
-            {
                 if (phi[i] == 0)
                 {
                     phi[i] = i - 1;
@@ -516,8 +515,7 @@ namespace ProjectEuler.Common
                         }
                     }
                 }
-                yield return phi[i];
-            }
+            return phi;
         }
 
         /// <summary>
