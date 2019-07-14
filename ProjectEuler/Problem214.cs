@@ -1,6 +1,5 @@
 ﻿using ProjectEuler.Common;
 using System;
-using System.Linq;
 
 namespace ProjectEuler
 {
@@ -12,14 +11,14 @@ namespace ProjectEuler
         static void P214()
         {
             long ans = 0;
-            int[] phi = Functions.getTotients(40000000).ToArray();
+            int[] phi = Functions.getTotients(40000000);
             foreach (int p in Functions.getPrimesList(40000000))
             {
-                int currentPrime = p;
                 int chain = 1;
-                while (currentPrime != 1)
+                int current = p;
+                while (current != 1)
                 {
-                    currentPrime = phi[currentPrime - 1];
+                    current = phi[current];
                     chain++;
                 }
                 if (chain == 25) ans += p;

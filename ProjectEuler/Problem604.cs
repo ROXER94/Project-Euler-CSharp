@@ -1,6 +1,5 @@
 ﻿using ProjectEuler.Common;
 using System;
-using System.Linq;
 
 namespace ProjectEuler
 {
@@ -14,11 +13,11 @@ namespace ProjectEuler
             long ans = 0;
             long n = (long)Math.Pow(10, 18);
             int k = (int)Math.Pow(n * Math.Pow(Math.PI, 2), 1.0 / 3);
-            int[] phi = Functions.getTotients(k).ToArray();
+            int[] phi = Functions.getTotients(k);
             for (long i = 1; i < k; i++)
             {
-                n -= i * phi[i - 1] / 2;
-                ans += phi[i - 1];
+                n -= i * phi[i] / 2;
+                ans += phi[i];
             }
             ans += 2 * n / k;
             Console.WriteLine(ans);
