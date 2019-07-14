@@ -828,7 +828,7 @@ namespace ProjectEuler.Common
         }
 
         /// <summary>
-        /// Dictionary used to memoize the last non-zero digit in a factorial
+        /// Array used to memoize the last non-zero digit in a factorial
         /// </summary>
         static int[] factorialLastDigitDict = { 1, 1, 2, 6, 4, 2, 2, 4, 2, 8 };
 
