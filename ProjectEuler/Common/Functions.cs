@@ -426,7 +426,7 @@ namespace ProjectEuler.Common
         /// Gets the sorted factors of a number
         /// </summary>
         /// <param name="n">Long</param>
-        /// <returns>A sorted set of the factors of n</returns>
+        /// <returns>A sortedSet of the factors of n</returns>
         public static SortedSet<long> getFactors(long n)
         {
             SortedSet<long> factors = new SortedSet<long>();
