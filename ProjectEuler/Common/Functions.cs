@@ -484,14 +484,14 @@ namespace ProjectEuler.Common
         /// <returns>The totient function of n</returns>
         public static int getPhi(long n)
         {
-            return (int)(from i in new HashSet<long>(Functions.getPrimeFactors(n)) select 1 - 1 / (double)i).Aggregate((double)n, (a, x) => a * x);
+            return (int)(from i in ToHashSet(Functions.getPrimeFactors(n)) select 1 - 1 / (double)i).Aggregate((double)n, (a, x) => a * x);
         }
 
         /// <summary>
-        /// Gets the totient functions of numbers from 1 to n
+        /// Gets the totient function of numbers
         /// </summary>
         /// <param name="n">Int</param>
-        /// <returns>The totient functions of numbers from 0 to n</returns>
+        /// <returns>The totient function of numbers from 0 to n</returns>
         public static int[] getTotients(int n)
         {
             int[] phi = new int[n + 1];
@@ -824,7 +824,7 @@ namespace ProjectEuler.Common
         /// <returns>The radical of n</returns>
         public static int getRadical(int n)
         {
-            return (int)(from i in new HashSet<long>(Functions.getPrimeFactors(n)) select i).Aggregate((long)1, (a, x) => a * x);
+            return (int)(from i in ToHashSet(Functions.getPrimeFactors(n)) select i).Aggregate((long)1, (a, x) => a * x);
         }
 
         /// <summary>
