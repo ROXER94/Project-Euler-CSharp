@@ -711,20 +711,20 @@ namespace ProjectEuler.Common
         /// <param name="primeIndex">Int</param>
         /// <param name="primesList">List</param>
         /// <returns>The squarefree numbers from a list of primes</returns>
-        public static IEnumerable<long> getSquarefrees(int maxPrime, long product, int primeIndex, List<long> primes)
+        public static IEnumerable<long> getSquarefrees(long product, int primeIndex, List<long> primes)
         {
             long prime = primes[primeIndex];
-            if (prime < maxPrime)
+            if (prime < primes.Last())
             {
-                foreach (long value in getSquarefrees(maxPrime, product, primeIndex + 1, primes))
+                foreach (long value in getSquarefrees(product, primeIndex + 1, primes))
                     yield return value;
-                foreach (long value in getSquarefrees(maxPrime, product * prime, primeIndex + 1, primes))
+                foreach (long value in getSquarefrees(product * prime, primeIndex + 1, primes))
                     yield return value;
             }
             else
             {
                 yield return product;
-                yield return product * maxPrime;
+                yield return product * primes.Last();
             }
         }
 
