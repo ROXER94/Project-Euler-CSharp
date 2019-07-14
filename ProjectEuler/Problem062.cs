@@ -6,11 +6,16 @@ namespace ProjectEuler
 {
     partial class ProjectEuler
     {
-        static string getFivePermutations(IDictionary<string, int> dict)
+        /// <summary>
+        /// Gets a specific value in a dictionary
+        /// </summary>
+        /// <param name="permutationsDict">IDictionary</param>
+        /// <returns>The nth value in permutationsDict</returns>
+        static string getFivePermutations(IDictionary<string, int> permutationsDict, int n)
         {
-            var values = dict.Values.ToArray();
-            var keys = dict.Keys.ToArray();
-            return keys[values.ToList().IndexOf(5)];
+            var values = permutationsDict.Values.ToArray();
+            var keys = permutationsDict.Keys.ToArray();
+            return keys[values.ToList().IndexOf(n)];
         }
 
         /// <summary>
@@ -18,15 +23,15 @@ namespace ProjectEuler
         /// </summary>
         static void P062()
         {
-            var cubes = from i in Enumerable.Range(1, 8400) select Math.Pow(i,3);
+            var cubes = from i in Enumerable.Range(1, 8400) select Math.Pow(i, 3);
             IDictionary<string, int> cubePermutationsDict = new Dictionary<string, int>();
             foreach (string i in (from cube in cubes select String.Concat((from c in cube.ToString() select c.ToString()).OrderBy(c => c))))
             {
                 if (!cubePermutationsDict.ContainsKey(i)) cubePermutationsDict[i] = 1;
-                else cubePermutationsDict[i]++; 
+                else cubePermutationsDict[i]++;
             }
             foreach (double ans in cubes)
-                if (String.Concat((from c in ans.ToString() select c.ToString()).OrderBy(c => c)) == getFivePermutations(cubePermutationsDict))
+                if (String.Concat((from c in ans.ToString() select c.ToString()).OrderBy(c => c)) == getFivePermutations(cubePermutationsDict, 5))
                 {
                     Console.WriteLine(ans);
                     break;
