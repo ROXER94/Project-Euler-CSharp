@@ -51,7 +51,7 @@ namespace ProjectEuler
         {
             BigInteger ans = 0;
             List<long> primes = Functions.getPrimesList(48);
-            List<long> squarefrees = Functions.getSquarefrees((int)primes.Last(), 1, 0, primes).OrderBy(i => i).ToList();
+            List<long> squarefrees = Functions.getSquarefrees(1, 0, primes).OrderBy(i => i).ToList();
             squarefrees.Remove(2);
             foreach (long sqfree in squarefrees)
             {
