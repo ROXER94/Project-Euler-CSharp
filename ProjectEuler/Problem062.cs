@@ -7,11 +7,12 @@ namespace ProjectEuler
     partial class ProjectEuler
     {
         /// <summary>
-        /// Gets a specific value in a dictionary
+        /// Gets a specific key in a dictionary
         /// </summary>
         /// <param name="permutationsDict">IDictionary</param>
-        /// <returns>The nth value in permutationsDict</returns>
-        static string getFivePermutations(IDictionary<string, int> permutationsDict, int n)
+        /// <param name="n">Int</param>
+        /// <returns>The first key in permutationsDict with value n</returns>
+        static string getSpecificDictionaryKey(IDictionary<string, int> permutationsDict, int n)
         {
             var values = permutationsDict.Values.ToArray();
             var keys = permutationsDict.Keys.ToArray();
@@ -31,7 +32,7 @@ namespace ProjectEuler
                 cubePermutationsDict[s] = count + 1;
             }
             foreach (double ans in cubes)
-                if (String.Concat((from c in ans.ToString() select c.ToString()).OrderBy(c => c)) == getFivePermutations(cubePermutationsDict, 5))
+                if (String.Concat((from c in ans.ToString() select c.ToString()).OrderBy(c => c)) == getSpecificDictionaryKey(cubePermutationsDict, 5))
                 {
                     Console.WriteLine(ans);
                     break;
