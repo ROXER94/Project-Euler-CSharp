@@ -27,8 +27,8 @@ namespace ProjectEuler
             IDictionary<string, int> cubePermutationsDict = new Dictionary<string, int>();
             foreach (string s in (from cube in cubes select String.Concat((from c in cube.ToString() select c.ToString()).OrderBy(c => c))))
             {
-                if (!cubePermutationsDict.ContainsKey(s)) cubePermutationsDict[s] = 1;
-                else cubePermutationsDict[s]++;
+                int count = cubePermutationsDict.ContainsKey(s) ? cubePermutationsDict[s] : 0;
+                cubePermutationsDict[s] = count + 1;
             }
             foreach (double ans in cubes)
                 if (String.Concat((from c in ans.ToString() select c.ToString()).OrderBy(c => c)) == getFivePermutations(cubePermutationsDict, 5))
