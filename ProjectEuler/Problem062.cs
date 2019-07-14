@@ -25,10 +25,10 @@ namespace ProjectEuler
         {
             var cubes = from i in Enumerable.Range(1, 8400) select Math.Pow(i, 3);
             IDictionary<string, int> cubePermutationsDict = new Dictionary<string, int>();
-            foreach (string i in (from cube in cubes select String.Concat((from c in cube.ToString() select c.ToString()).OrderBy(c => c))))
+            foreach (string s in (from cube in cubes select String.Concat((from c in cube.ToString() select c.ToString()).OrderBy(c => c))))
             {
-                if (!cubePermutationsDict.ContainsKey(i)) cubePermutationsDict[i] = 1;
-                else cubePermutationsDict[i]++;
+                if (!cubePermutationsDict.ContainsKey(s)) cubePermutationsDict[s] = 1;
+                else cubePermutationsDict[s]++;
             }
             foreach (double ans in cubes)
                 if (String.Concat((from c in ans.ToString() select c.ToString()).OrderBy(c => c)) == getFivePermutations(cubePermutationsDict, 5))
