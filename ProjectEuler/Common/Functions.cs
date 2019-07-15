@@ -144,7 +144,7 @@ namespace ProjectEuler.Common
             int height = array.GetLength(0);
             if (row >= height) throw new IndexOutOfRangeException("Row index out of range");
             int[] returnRow = new int[width];
-            for (var i = 0; i < width; i++)
+            for (int i = 0; i < width; i++)
                 returnRow[i] = array[row, i];
             return returnRow;
         }
@@ -161,7 +161,7 @@ namespace ProjectEuler.Common
             int height = array.GetLength(1);
             if (col >= height) throw new IndexOutOfRangeException("Column index out of range");
             int[] returnCol = new int[width];
-            for (var i = 0; i < width; i++)
+            for (int i = 0; i < width; i++)
                 returnCol[i] = array[i, col];
             return returnCol;
         }
