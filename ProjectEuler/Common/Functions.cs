@@ -186,7 +186,7 @@ namespace ProjectEuler.Common
         }
 
         /// <summary>
-        /// Determines if string1 is an anagram of string2
+        /// Determines if str1 is an anagram of str2
         /// </summary>
         /// <param name="str1">String</param>
         /// <param name="str2">String</param>
@@ -207,7 +207,7 @@ namespace ProjectEuler.Common
         }
 
         /// <summary>
-        /// Determines if a number is 1-9 pandigital
+        /// Determines if a number is pandigital
         /// </summary>
         /// <param name="n">Long</param>
         /// <returns>True if n is 1-9 pandigital</returns>
@@ -598,11 +598,11 @@ namespace ProjectEuler.Common
         }
 
         /// <summary>
-        /// Gets Modular Inverse of a mod m
+        /// Gets the Modular Multiplicative Inverse of a mod m
         /// </summary>
         /// <param name="a">Long</param>
         /// <param name="m">Long</param>
-        /// <returns>The Modular Inverse of a and m: ax % m == 1</returns>
+        /// <returns>The Modular Multiplicative Inverse of a and m: ax % m == 1</returns>
         public static long getModInverse(long a, long m)
         {
             Tuple<long, long, long> egcd = getExtendedGCD(a, m);
@@ -706,7 +706,6 @@ namespace ProjectEuler.Common
         /// <summary>
         /// Gets the squarefree numbers from a list of primes
         /// </summary>
-        /// <param name="maxPrime">Int</param>
         /// <param name="product">Long</param>
         /// <param name="primeIndex">Int</param>
         /// <param name="primesList">List</param>
@@ -801,7 +800,7 @@ namespace ProjectEuler.Common
         /// </summary>
         /// <param name="a">Int</param>
         /// <param name="n">Int</param>
-        /// <returns>Smallest k such that a^k ≡ 1 (mod n)</returns>
+        /// <returns>The Multiplicative Order of a and n: smallest k such that a^k ≡ 1 (mod n)</returns>
         public static int getMultiplicativeOrder(int a, long n)
         {
             if (n < 2) throw new System.ArgumentException("Integer modulus n must be greater than 1");
