@@ -764,10 +764,10 @@ namespace ProjectEuler.Common
         }
 
         /// <summary>
-        /// Gets an array containing the Moebius Function values from 1 to n
+        /// Gets an array containing the Moebius Function values
         /// </summary>
         /// <param name="n">Int</param>
-        /// <returns>An array containing the Moebius Function values from 1 to n</returns>
+        /// <returns>An array containing the Moebius Function values from 0 to n</returns>
         public static int[] getMoebius(int n)
         {
             int[] mu = new int[n + 1];
