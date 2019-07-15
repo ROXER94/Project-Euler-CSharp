@@ -854,10 +854,10 @@ namespace ProjectEuler.Common
         {
             if (relativePrimes.Count <= 1)
                 throw new System.ArgumentException("Length of array of relative primes must be greater than one");
-            if ((from i in relativePrimes from j in relativePrimes.GetRange(relativePrimes.IndexOf(i) + 1, relativePrimes.Count - relativePrimes.IndexOf(i) - 1) select Functions.getGCD(i, j)).Max() != 1)
-                throw new System.ArgumentException("Array of relative primes is not a collection of pairwise relatively prime integers");
             if (relativePrimes.Count != remainders.Count)
                 throw new System.ArgumentException("Array of relative primes and array of remainders are not the same length");
+            if ((from i in relativePrimes from j in relativePrimes.GetRange(relativePrimes.IndexOf(i) + 1, relativePrimes.Count - relativePrimes.IndexOf(i) - 1) select Functions.getGCD(i, j)).Max() != 1)
+                throw new System.ArgumentException("Array of relative primes is not a collection of pairwise relatively prime integers");
             long M = relativePrimes.Aggregate((long)1, (a, x) => a * x);
             long[] mArray = (from i in relativePrimes select M / i).ToArray();
             long[] yArray = (from i in relativePrimes select Functions.getModInverse(mArray[relativePrimes.IndexOf(i)] % i, i)).ToArray();
