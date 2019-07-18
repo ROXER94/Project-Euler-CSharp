@@ -11,7 +11,7 @@ namespace ProjectEuler
         /// </summary>
         static void P072()
         {
-            Console.WriteLine((from i in Enumerable.Range(1, 1000000) select Convert.ToInt64(Functions.getPhi(i))).Sum() - 1);
+            Console.WriteLine((from i in Enumerable.Range(2, 999999) select Convert.ToInt64(Functions.getPhi(i))).Sum());
         }
     }
 }
