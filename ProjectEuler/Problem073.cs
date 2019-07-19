@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace ProjectEuler
 {
@@ -10,9 +11,9 @@ namespace ProjectEuler
         /// </summary>
         /// <param name="n">Int</param>
         /// <returns>The Farey sequence of order n</returns>
-        static List<double> getFareySequence(int n)
+        static HashSet<double> getFareySequence(int n)
         {
-            List<double> FareySequence = new List<double>();
+            HashSet<double> FareySequence = new HashSet<double>();
             int a = 0;
             int b = 1;
             int c = 1;
@@ -29,7 +30,6 @@ namespace ProjectEuler
                 b = q;
                 FareySequence.Add((double)a / b);
             }
-            FareySequence.Sort();
             return FareySequence;
         }
 
@@ -38,8 +38,8 @@ namespace ProjectEuler
         /// </summary>
         static void P073()
         {
-            List<double> FareySequence = getFareySequence(12000);
-            Console.WriteLine(FareySequence.IndexOf(1.0 / 2) - FareySequence.IndexOf(1.0 / 3) - 1);
+            HashSet<double> FareySequence = getFareySequence(12000);
+            Console.WriteLine((from i in FareySequence where i > 1.0 / 3 && i < 1.0 / 2 select i).Count());
         }
     }
 }
