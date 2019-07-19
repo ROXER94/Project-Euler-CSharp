@@ -6,6 +6,11 @@ namespace ProjectEuler
 {
     partial class ProjectEuler
     {
+        /// <summary>
+        /// Gets the square root expansion of a number
+        /// </summary>
+        /// <param name="n">Int</param>
+        /// <returns>The square root expansion of n</returns>
         static BigInteger getSquareRootExpansion(int n)
         {
             BigInteger a = 5 * n;
