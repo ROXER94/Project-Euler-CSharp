@@ -13,7 +13,7 @@ namespace ProjectEuler
         /// </summary>
         static void P079()
         {
-            var passcodes = Functions.getPermutations(new List<int>() { 0, 1, 2, 3, 6, 7, 8, 9 }, 8).OrderBy(n => n.ToString());
+            var passcodes = Functions.getPermutations(new List<int>() { 0, 1, 2, 3, 6, 7, 8, 9 }, 8);
             var keylog = new HashSet<string>();
             foreach (string s in File.ReadAllText(@"...\...\Resources\p079_keylog.txt").Split('\n'))
                 keylog.Add(s);
