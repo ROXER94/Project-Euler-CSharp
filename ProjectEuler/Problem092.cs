@@ -41,7 +41,7 @@ namespace ProjectEuler
         /// </summary>
         static void P092()
         {
-            Console.WriteLine((from i in Enumerable.Range(1, 10000000) where !isHappy(i) select 1).Count());
+            Console.WriteLine((from i in Enumerable.Range(1, 9999999) where !isHappy(i) select 1).Count());
         }
     }
 }
