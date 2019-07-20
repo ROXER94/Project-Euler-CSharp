@@ -32,17 +32,16 @@ namespace ProjectEuler
             int maximumChainCount = 0;
             HashSet<int> seen = new HashSet<int>();
             for (int i = 2; i < 6000; i += 2)
-            {
-                int j = i;
                 if (!seen.Contains(i))
                 {
+                    int j = i;
                     SortedSet<int> chain = new SortedSet<int>();
-                    while (!chain.Contains(i))
+                    while (!chain.Contains(j))
                     {
-                        chain.Add(i);
-                        i = (int)Functions.getFactors(i).Sum() - i;
-                        seen.Add(i);
-                        if (i % 2 == 1 || i < 220 || i > 1000000)
+                        chain.Add(j);
+                        j = (int)Functions.getFactors(j).Sum() - j;
+                        seen.Add(j);
+                        if (j % 2 == 1 || j < 220 || j > 1000000)
                         {
                             chain = new SortedSet<int>();
                             break;
@@ -55,8 +54,6 @@ namespace ProjectEuler
                         ans = chain;
                     }
                 }
-                i = j;
-            }
             Console.WriteLine(getMinAmicableChain(ans.Last()));
         }
     }
