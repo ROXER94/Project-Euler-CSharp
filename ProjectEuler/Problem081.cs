@@ -14,14 +14,15 @@ namespace ProjectEuler
         {
             List<int[]> matrix = new List<int[]>();
             foreach (string s in File.ReadAllText(@"...\...\Resources\p081_matrix.txt").Split('\n').Select(s => s.Replace("\"", "")))
-                matrix.Add(s.Split(',').Select(n => Convert.ToInt32(n)).ToArray());
+                matrix.Add(s.Split(',').Select(i => Convert.ToInt32(i)).ToArray());
             int[][] m = matrix.ToArray();
-            for (int i = 1; i < 80; i++)
+            int n = 80;
+            for (int i = 1; i < n; i++)
                 m[0][i] += m[0][i - 1];
-            for (int j = 1; j < 80; j++)
+            for (int j = 1; j < n; j++)
                 m[j][0] += m[j - 1][0];
-            for (int i = 1; i < 80; i++)
-                for (int j = 1; j < 80; j++)
+            for (int i = 1; i < n; i++)
+                for (int j = 1; j < n; j++)
                     m[i][j] += Math.Min(m[i][j - 1], m[i - 1][j]);
             Console.WriteLine(matrix.Last().Last());
         }
