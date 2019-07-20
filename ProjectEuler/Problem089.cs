@@ -10,7 +10,7 @@ namespace ProjectEuler
         /// Gets the number of characters saved by writing the string in its minimal Roman Numeral form
         /// </summary>
         /// <param name="s">String</param>
-        /// <returns>The number of characters saved by writing the string in its minimal Roman Numeral form</returns>
+        /// <returns>The number of characters saved by writing s in its minimal Roman Numeral form</returns>
         static int getRomanReplacementCount(string s)
         {
             int charactersReplaced = 0;
