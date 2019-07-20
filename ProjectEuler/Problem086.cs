@@ -12,7 +12,7 @@ namespace ProjectEuler
         static void P086()
         {
             HashSet<long> primes = Functions.ToHashSet(Functions.getPrimesList(2000));
-            IDictionary<double,int> squaresDict = new Dictionary<double, int>();
+            IDictionary<int, int> squaresDict = new Dictionary<int, int>();
             for (int i = 1; i < 6000; i++) squaresDict[i] = i * i;
             IDictionary<int, bool> isSquareDict = new Dictionary<int, bool>();
             int solutions = 2;
