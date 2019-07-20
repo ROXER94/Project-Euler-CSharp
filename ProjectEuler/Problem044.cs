@@ -14,10 +14,11 @@ namespace ProjectEuler
         {
             HashSet<long> pentagon = Functions.ToHashSet(from i in Enumerable.Range(1, 2500) select Functions.getPentagon(i));
             List<Tuple<long, long>> pairs = new List<Tuple<long, long>>();
-            foreach (var p1 in pentagon)
-                foreach (var p2 in pentagon.ToList().GetRange(pentagon.ToList().IndexOf(p1) + 1, pentagon.ToList().Count - pentagon.ToList().IndexOf(p1) - 1))
-                    if (pentagon.Contains(p1 + p2))
-                        pairs.Add(Tuple.Create(p1, p2));
+            long[] pentagonArray = pentagon.ToArray();
+            for (int i = 0; i < pentagon.Count - 1; i++)
+                for (int j = i; j < pentagon.Count - 1; j++)
+                    if (pentagon.Contains(pentagonArray[i] + pentagonArray[j]))
+                        pairs.Add(Tuple.Create(pentagonArray[i], pentagonArray[j]));
             foreach (var i in pairs)
                 if (pentagon.Contains(i.Item2 - i.Item1))
                 {
