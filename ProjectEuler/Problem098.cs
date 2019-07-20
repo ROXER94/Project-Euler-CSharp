@@ -14,7 +14,7 @@ namespace ProjectEuler
         static void P098()
         {
             string[] words = File.ReadAllText(@"...\...\Resources\p098_words.txt").Split(',').Select(s => s.Replace("\"", "")).ToArray();
-            List<Tuple<string,string>> anagrams = new List<Tuple<string,string>>();
+            List<Tuple<string, string>> anagrams = new List<Tuple<string, string>>();
             for (int i = 0; i < words.Length - 1; i++)
                 for (int j = i + 1; j < words.Length; j++)
                     if (Functions.isAnagram(words[i], words[j]))
@@ -104,7 +104,7 @@ namespace ProjectEuler
                             c == j.Item2.ToString().IndexOf(j.Item1.ToString()[2]) &&
                             d == j.Item2.ToString().IndexOf(j.Item1.ToString()[3]) &&
                             e == j.Item2.ToString().IndexOf(j.Item1.ToString()[4]) &&
-                            e == j.Item2.ToString().IndexOf(j.Item1.ToString()[5]))
+                            f == j.Item2.ToString().IndexOf(j.Item1.ToString()[5]))
                             ans.Add(j.Item2);
                 }
             }
