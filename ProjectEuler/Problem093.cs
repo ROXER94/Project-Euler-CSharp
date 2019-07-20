@@ -19,25 +19,25 @@ namespace ProjectEuler
             {
                 if (i == "+" || i == "-" || i == "*" || i == "/")
                 {
-                    if (i.ToString() == "+")
+                    if (i == "+")
                     {
                         double a = stack.Pop();
                         double b = stack.Pop();
                         stack.Push(b + a);
                     }
-                    else if (i.ToString() == "-")
+                    else if (i == "-")
                     {
                         double a = stack.Pop();
                         double b = stack.Pop();
                         stack.Push(b - a);
                     }
-                    else if (i.ToString() == "*")
+                    else if (i == "*")
                     {
                         double a = stack.Pop();
                         double b = stack.Pop();
                         stack.Push(b * a);
                     }
-                    else if (i.ToString() == "/")
+                    else if (i == "/")
                     {
                         double a = stack.Pop();
                         double b = stack.Pop();
