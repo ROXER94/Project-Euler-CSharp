@@ -23,7 +23,7 @@ namespace ProjectEuler
             double s3 = Functions.getDistance(x1, y1, x3, y3);
             double[] sides = new double[] { s1, s2, s3 };
             Array.Sort(sides);
-            return Math.Round(sides[0] * sides[0] + sides[1] * sides[1], 1) == Math.Round(sides[2] * sides[2], 1);
+            return Math.Round(sides[0] * sides[0] + sides[1] * sides[1]) == Math.Round(sides[2] * sides[2]);
         }
 
         /// <summary>
