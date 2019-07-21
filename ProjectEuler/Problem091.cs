@@ -45,7 +45,8 @@ namespace ProjectEuler
                                 rightTriangles.Add(Tuple.Create(Tuple.Create(x1, y1), Tuple.Create(x2, y2)));
                                 ans++;
                             }
-            Console.WriteLine(ans - limit * limit);
+            ans -= limit * limit;
+            Console.WriteLine(ans);
         }
     }
 }
