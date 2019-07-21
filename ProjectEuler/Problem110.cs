@@ -59,7 +59,7 @@ namespace ProjectEuler
             int index = 0;
             foreach (int i in values)
             {
-                foreach (long j in primes.GetRange(0,i))
+                foreach (long j in primes.GetRange(0, i))
                     ans *= (long)Math.Pow(j, exponents[index]);
                 primes = primes.GetRange(i, primes.Count() - i);
                 index++;
