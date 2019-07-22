@@ -69,7 +69,7 @@ namespace ProjectEuler
         /// Gets the matrix inverse of a matrix
         /// </summary>
         /// <param name="m">Decimal[][]</param>
-        /// <returns>The inverse of m</returns>
+        /// <returns>The matrix inverse of m</returns>
         static decimal[][] getMatrixInverse(decimal[][] m)
         {
             decimal determinant = getMatrixDeterminant(m);
