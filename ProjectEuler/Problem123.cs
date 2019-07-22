@@ -1,8 +1,6 @@
 ﻿using ProjectEuler.Common;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-
 
 namespace ProjectEuler
 {
@@ -17,7 +15,8 @@ namespace ProjectEuler
             List<long> primes = Functions.getPrimesList(300000);
             while (2 * (ans + 1) * primes[ans] < 10000000000)
                 ans += 2;
-            Console.WriteLine(ans + 2);
+            ans += 2;
+            Console.WriteLine(ans);
         }
     }
 }
