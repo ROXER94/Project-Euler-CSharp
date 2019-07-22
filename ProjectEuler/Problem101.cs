@@ -119,7 +119,7 @@ namespace ProjectEuler
         /// </summary>
         static void P101()
         {
-            decimal ans = 0;
+            decimal ans = 1;
             decimal[][] BOPS = (from i in Enumerable.Range(1, 10) select new decimal[] { getU101(i) }).Cast<decimal[]>().ToArray();
             for (int i = 2; i <= BOPS.Count(); i++)
             {
@@ -139,7 +139,7 @@ namespace ProjectEuler
                 for (int j = 0; j < FlattenedMatrixProduct.Count(); j++)
                     ans += FlattenedMatrixProduct[j] * (decimal)Math.Pow((FlattenedMatrixProduct.Count() + 1), j);
             }
-            Console.WriteLine(Math.Round(ans) + 1);
+            Console.WriteLine(Math.Round(ans));
         }
     }
 }
