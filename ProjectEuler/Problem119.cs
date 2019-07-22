@@ -10,7 +10,7 @@ namespace ProjectEuler
         /// Determines if a number is equal to the sum of its digits raised to some power
         /// </summary>
         /// <param name="n">Long</param>
-        /// <returns>True if a number is equal to the sum of its digits raised to some power</returns>
+        /// <returns>True if n is equal to the sum of its digits raised to some power</returns>
         static bool isDigitPowerSum(long n)
         {
             int sum = n.ToString().Select(c => (int)Char.GetNumericValue(c)).Sum();
