@@ -108,9 +108,7 @@ namespace ProjectEuler
                 {
                     c[i][j] = 0;
                     for (int k = 0; k < a[1].Length; k++)
-                    {
                         c[i][j] += a[i][k] * b[k][j];
-                    }
                 }
             }
             return c;
