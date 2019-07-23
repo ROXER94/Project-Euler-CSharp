@@ -23,7 +23,7 @@ namespace ProjectEuler
                 if (rad[c - 1] * rad[c] < c) ans += c;
                 if (6 * rad[c] < c)
                     for (int a = 2; a < c / 2; a++)
-                        if (rad[a] * rad[c] < c && Functions.getGCD(a, c) == 1 && rad[a] * rad[c - a] * rad[c] < c)
+                        if (rad[a] * rad[c] < c && rad[a] * rad[c - a] * rad[c] < c && Functions.getGCD(a, c) == 1)
                             ans += c;
             }
             Console.WriteLine(ans);
