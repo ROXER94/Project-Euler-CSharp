@@ -10,7 +10,7 @@ namespace ProjectEuler
         /// </summary>
         static void P006()
         {
-            Console.WriteLine(Math.Pow((from n in Enumerable.Range(1, 100) select n).Sum(), 2) - (from n in Enumerable.Range(1, 100) select n * n).Sum());
+            Console.WriteLine(Math.Pow((from i in Enumerable.Range(1, 100) select i).Sum(), 2) - (from i in Enumerable.Range(1, 100) select i * i).Sum());
         }
     }
 }
