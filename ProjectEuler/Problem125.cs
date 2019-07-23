@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjectEuler.Common;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -12,8 +13,8 @@ namespace ProjectEuler
         static void P125()
         {
             var squares = from i in Enumerable.Range(1, 7074) select i * i;
-            var squarePalindromes = from i in squares where i.ToString() == new String(i.ToString().ToCharArray().Reverse().ToArray()) select i;
-            HashSet<long> palindomes = new HashSet<long>();
+            var squarePalindromes = from i in squares where Functions.isPalindrome(i.ToString()) select i;
+            HashSet<long> palindromes = new HashSet<long>();
             int index = 0;
             while (index != squares.Count())
             {
@@ -24,12 +25,12 @@ namespace ProjectEuler
                     {
                         currentValue += i;
                         if (currentValue.ToString() == new String(currentValue.ToString().ToCharArray().Reverse().ToArray()))
-                            palindomes.Add(currentValue);
+                            palindromes.Add(currentValue);
                     }
                 }
                 index++;
             }
-            Console.WriteLine(palindomes.Sum() - squarePalindromes.Sum());
+            Console.WriteLine(palindromes.Sum() - squarePalindromes.Sum());
         }
     }
 }
