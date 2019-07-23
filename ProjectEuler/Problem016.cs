@@ -11,7 +11,7 @@ namespace ProjectEuler
         /// </summary>
         static void P016()
         {
-            Console.WriteLine((from n in (BigInteger.Pow(2, 1000)).ToString() select (int)Char.GetNumericValue(n)).Sum());
+            Console.WriteLine((from i in (BigInteger.Pow(2, 1000)).ToString() select (int)Char.GetNumericValue(i)).Sum());
         }
     }
 }
