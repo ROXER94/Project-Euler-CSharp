@@ -563,6 +563,47 @@ namespace ProjectEuler.Common
         }
 
         /// <summary>
+        /// Gets the base 10 representation of a number
+        /// </summary>
+        /// <param name="n">Int</param>
+        /// <param name="fromBase">Int</param>
+        /// <returns>The base 10 representation of n</returns>
+        public static long getConvertBaseToDecimal(int n, int fromBase)
+        {
+            string s = n.ToString();
+            int power = 1;
+            long result = 0;
+            for (int i = s.Length - 1; i >= 0; i--)
+            {
+                if ((int)Char.GetNumericValue(s[i]) >= fromBase)
+                    throw new System.ArgumentException("Invalid number");
+                result += (int)Char.GetNumericValue(s[i]) * power;
+                power *= fromBase;
+            }
+            return result;
+        }
+
+        /// <summary>
+        /// Gets the toBase representation of a decimal number
+        /// </summary>
+        /// <param name="n">Int</param>
+        /// <param name="toBase">Int</param>
+        /// <returns>The toBase representation of n</returns>
+        public static long getConvertBaseFromDecimal(int n, int toBase)
+        {
+            string s = "";
+            while (n > 0)
+            {
+                int t = n % toBase;
+                s += t >= 0 && t <= 9 ? (char)(t + 48) : (char)(t - 10 + 65);
+                n /= toBase;
+            }
+            char[] result = s.ToCharArray();
+            Array.Reverse(result);
+            return Int64.Parse(String.Join("", new String(result)));
+        }
+
+        /// <summary>
         /// Gets the Greatest Common Divisor of two numbers
         /// </summary>
         /// <param name="a">Long</param>
