@@ -13,11 +13,10 @@ namespace ProjectEuler
         /// <summary>
         /// Gets the number of prize strings that exist over a 30-day period via recursion
         /// </summary>
-        /// <param name="s">String</param>
         /// <param name="late">Bool</param>
         /// <param name="absences">Int</param>
         /// <param name="day">Int</param>
-        /// <returns></returns>
+        /// <returns>The number of prize strings that exist over a 30-day period via recursion</returns>
         static int getPrizeStringCount(bool late, int absences, int day)
         {
             if (day == 30) return 1;
