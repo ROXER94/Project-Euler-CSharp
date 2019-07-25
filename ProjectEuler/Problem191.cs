@@ -11,12 +11,12 @@ namespace ProjectEuler
         static IDictionary<Tuple<bool, int, int>, int> prizeStringDict = new Dictionary<Tuple<bool, int, int>, int>();
 
         /// <summary>
-        /// Gets the number of prize strings that exist over a 30-day period via recursion
+        /// Gets the number of prize strings that exist over a 30-day period via memoization
         /// </summary>
         /// <param name="late">Bool</param>
         /// <param name="absences">Int</param>
         /// <param name="day">Int</param>
-        /// <returns>The number of prize strings that exist over a 30-day period via recursion</returns>
+        /// <returns>The number of prize strings that exist over a 30-day period</returns>
         static int getPrizeStringCount(bool late, int absences, int day)
         {
             if (day == 30) return 1;
