@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjectEuler.Common;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -14,7 +15,7 @@ namespace ProjectEuler
             long ans = 0;
             List<string> binary = new List<string>();
             for (int i = 0; i < 32; i++)
-                binary.Add(Convert.ToString(i, 2).PadLeft(5, '0'));
+                binary.Add(Functions.getConvertBaseFromDecimal(i, 2).ToString().PadLeft(5, '0'));
             for (int a = 0; a < 2; a++)
                 for (int b = 0; b < 2; b++)
                     for (int c = 0; c < 2; c++)
@@ -60,7 +61,7 @@ namespace ProjectEuler
                                                                                                                             break;
                                                                                                                         }
                                                                                                                     }
-                                                                                                                    if (valid) ans += Convert.ToInt32(S, 2);
+                                                                                                                    if (valid) ans += Functions.getConvertBaseToDecimal(S, 2);
                                                                                                                 }
                                                                                                             }
             Console.WriteLine(ans);
