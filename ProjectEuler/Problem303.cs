@@ -6,11 +6,11 @@ namespace ProjectEuler
     partial class ProjectEuler
     {
         /// <summary>
-        /// Gets the smallest multiple of a number that uses only digits ≤ 2.
+        /// Gets the smallest multiple of a number
         /// </summary>
         /// <param name="n">Int</param>
         /// <param name="multiples">SortedSet</param>
-        /// <returns></returns>
+        /// <returns>The smallest multiple of n</returns>
         static long getSmallDigitMultiple(int n, SortedSet<long> multiples)
         {
             foreach (long i in multiples)
