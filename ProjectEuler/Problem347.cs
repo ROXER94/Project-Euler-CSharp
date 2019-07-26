@@ -34,12 +34,10 @@ namespace ProjectEuler
             long ans = 0;
             int N = 10000000;
             List<long> primes = Functions.getPrimesList(N / 2);
-            foreach (long p in primes)
-                foreach (long q in primes.GetRange(primes.IndexOf(p) + 1, primes.Count - primes.IndexOf(p) - 1))
-                {
-                    if (p * q > N) break;
-                    ans += getM347(p, q, N);
-                }
+            for (int p = 0; p < primes.Count - 1; p++)
+                for (int q = p + 1; q < primes.Count; q++)
+                    if (primes[p] * primes[q] > N) break;
+                    else ans += getM347(primes[p], primes[q], N);
             Console.WriteLine(ans);
         }
     }
