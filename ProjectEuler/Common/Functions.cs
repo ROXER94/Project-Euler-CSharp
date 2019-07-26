@@ -565,12 +565,11 @@ namespace ProjectEuler.Common
         /// <summary>
         /// Gets the base 10 representation of a number
         /// </summary>
-        /// <param name="n">Int</param>
+        /// <param name="s">String</param>
         /// <param name="fromBase">Int</param>
-        /// <returns>The base 10 representation of n</returns>
-        public static long getConvertBaseToDecimal(int n, int fromBase)
+        /// <returns>The base 10 representation of s</returns>
+        public static long getConvertBaseToDecimal(string s, int fromBase)
         {
-            string s = n.ToString();
             int power = 1;
             long result = 0;
             for (int i = s.Length - 1; i >= 0; i--)
@@ -591,6 +590,7 @@ namespace ProjectEuler.Common
         /// <returns>The toBase representation of n</returns>
         public static long getConvertBaseFromDecimal(int n, int toBase)
         {
+            if (n == 0) return 0;
             string s = "";
             while (n > 0)
             {
