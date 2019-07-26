@@ -14,9 +14,9 @@ namespace ProjectEuler
         static int getPerfectPrimitives(decimal[][] triangle, int limit)
         {
             if (triangle[2][0] > limit) return 0;
-            decimal[][] a = getMatrixMultiplication(new decimal[][] { new decimal[3] { 1, -2, 2 }, new decimal[3] { 2, -1, 2 }, new decimal[3] { 2, -2, 3 } }, triangle);
-            decimal[][] b = getMatrixMultiplication(new decimal[][] { new decimal[3] { 1, 2, 2 }, new decimal[3] { 2, 1, 2 }, new decimal[3] { 2, 2, 3 } }, triangle);
-            decimal[][] c = getMatrixMultiplication(new decimal[][] { new decimal[3] { -1, 2, 2 }, new decimal[3] { -2, 1, 2 }, new decimal[3] { -2, 2, 3 } }, triangle);
+            decimal[][] a = getMatrixMultiplication(new decimal[][] { new decimal[] { 1, -2, 2 }, new decimal[] { 2, -1, 2 }, new decimal[] { 2, -2, 3 } }, triangle);
+            decimal[][] b = getMatrixMultiplication(new decimal[][] { new decimal[] { 1, 2, 2 }, new decimal[] { 2, 1, 2 }, new decimal[] { 2, 2, 3 } }, triangle);
+            decimal[][] c = getMatrixMultiplication(new decimal[][] { new decimal[] { -1, 2, 2 }, new decimal[] { -2, 1, 2 }, new decimal[] { -2, 2, 3 } }, triangle);
             decimal area = triangle[0][0] * triangle[1][0] / 2;
             if (Functions.isSquare((long)triangle[2][0]) && area % 84 != 0)
                 return 1 + getPerfectPrimitives(a, limit) + getPerfectPrimitives(b, limit) + getPerfectPrimitives(c, limit);
@@ -29,7 +29,7 @@ namespace ProjectEuler
         /// </summary>
         static void P218()
         {
-            Console.WriteLine(getPerfectPrimitives(new decimal[][] { new decimal[1] { 3 }, new decimal[1] { 4 }, new decimal[1] { 5 } }, (int)Math.Pow(Math.Pow(10, 16), (1 / 3))));
+            Console.WriteLine(getPerfectPrimitives(new decimal[][] { new decimal[] { 3 }, new decimal[] { 4 }, new decimal[] { 5 } }, (int)Math.Pow(Math.Pow(10, 16), (1 / 3))));
         }
     }
 }
