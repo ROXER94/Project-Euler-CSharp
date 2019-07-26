@@ -900,7 +900,7 @@ namespace ProjectEuler.Common
                 throw new System.ArgumentException("Array of relative primes is not a collection of pairwise relatively prime integers");
             long M = relativePrimes.Aggregate((long)1, (a, x) => a * x);
             long[] mArray = (from p in relativePrimes select M / p).ToArray();
-            long[] yArray = (from p in relativePrimes select Functions.getModInverse(mArray[relativePrimes.IndexOf(p)] % p, p)).ToArray();
+            long[] yArray = (from p in relativePrimes select Functions.getModInverse(mArray[relativePrimes.IndexOf(p)], p)).ToArray();
             return (from i in remainders.Zip(mArray, (x, y) => x * y).Zip(yArray, (x, y) => x * y) select i).Sum() % M;
         }
 
