@@ -41,8 +41,8 @@ namespace ProjectEuler
                             for (int e = d; e < 2; e++)
                                 for (int f = e; f < 2; f++)
                                 {
-                                    BigInteger n = getGozinta(new long[6] { a, b, c, d, e, f });
-                                    if (n < BigInteger.Pow(10, 16) && getGozinta(new long[1] { (long)n }) == n)
+                                    BigInteger n = getGozinta(new long[] { a, b, c, d, e, f });
+                                    if (n < BigInteger.Pow(10, 16) && getGozinta(new long[] { (long)n }) == n)
                                         ans.Add((long)n);
                                 }
             Console.WriteLine(ans.Sum() + 1);
