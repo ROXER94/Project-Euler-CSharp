@@ -34,18 +34,16 @@ namespace ProjectEuler
             for (int i = 3; i <= n; i++)
                 if (!seen.Contains(i))
                     for (long j = i - array[i]; j >= 0; j -= array[i])
-                    {
                         if ((j + 1) * (j + 1) % i == j + 1)
                         {
                             ans += j + 1;
                             break;
                         }
-                        if (j * j % i == j)
+                        else if (j * j % i == j)
                         {
                             ans += j;
                             break;
                         }
-                    }
             Console.WriteLine(ans);
         }
     }
