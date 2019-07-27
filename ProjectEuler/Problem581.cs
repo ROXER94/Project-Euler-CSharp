@@ -12,7 +12,7 @@ namespace ProjectEuler
         /// Gets Lehmer's speed-up for use in Størmer's theorem
         /// </summary>
         /// <param name="n">BigInteger</param>
-        /// <returns>Lehmer's speed-up</returns>
+        /// <returns>Lehmer's speed-up for n</returns>
         static Tuple<bool, BigInteger> getLehmerSpeedUp(BigInteger n)
         {
             BigInteger x = (n - 1) / 2;
