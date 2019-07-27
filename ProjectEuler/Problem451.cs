@@ -11,7 +11,7 @@ namespace ProjectEuler
         /// </summary>
         static void P451()
         {
-            long ans = 0;
+            long ans = 1;
             int n = 20000000;
             int[] array = new int[n + 1];
             HashSet<long> primes = Functions.ToHashSet(Functions.getPrimesList(n));
@@ -46,19 +46,17 @@ namespace ProjectEuler
             for (int i = 3; i <= n; i++)
                 if (!seen.Contains(i))
                     for (long j = i - array[i]; j >= 0; j -= array[i])
-                    {
                         if ((j + 1) * (j + 1) % i == 1)
                         {
                             ans += j + 1;
                             break;
                         }
-                        if ((j - 1) * (j - 1) % i == 1)
+                        else if ((j - 1) * (j - 1) % i == 1)
                         {
                             ans += j - 1;
                             break;
                         }
-                    }
-            Console.WriteLine(ans + 1);
+            Console.WriteLine(ans);
         }
     }
 }
