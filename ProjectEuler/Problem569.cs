@@ -23,7 +23,7 @@ namespace ProjectEuler
         {
             primePeakDict[n] = new List<int>() { n - 1 };
             double currentMinSlope = Functions.getSlope(primePeaks[n - 1].Item1, primePeaks[n - 1].Item2, primePeaks[n].Item1, primePeaks[n].Item2);
-            HashSet<int> potentiallyVisible = new HashSet<int>(primePeakDict[n - 1]);
+            HashSet<int> potentiallyVisible = Functions.ToHashSet(primePeakDict[n - 1]);
             while (potentiallyVisible.Count != 0)
             {
                 int currentPeak = potentiallyVisible.Max();
