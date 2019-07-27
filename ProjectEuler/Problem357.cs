@@ -7,6 +7,12 @@ namespace ProjectEuler
 {
     partial class ProjectEuler
     {
+        /// <summary>
+        /// Determines if a number is a prime generating integer
+        /// </summary>
+        /// <param name="n">Int</param>
+        /// <param name="primesDict">IDictionary</param>
+        /// <returns>True if n is a prime generating integer</returns>
         static bool isPrimeGeneratingInteger(int n, IDictionary<long, bool> primesDict)
         {
             for (int d = 1; d <= Math.Pow(n, .5); d++)
