@@ -28,10 +28,8 @@ namespace ProjectEuler
             {
                 List<decimal> tRow = new List<decimal>();
                 for (int c = 0; c < m[r].Length; c++)
-                {
                     if (c == r) tRow.Add(m[r][c]);
                     else tRow.Add(m[c][r]);
-                }
                 t.Add(tRow);
             }
             return t.Select(Enumerable.ToArray).ToArray();
@@ -79,10 +77,7 @@ namespace ProjectEuler
             {
                 List<decimal> cofactorRow = new List<decimal>();
                 for (int c = 0; c < m.Length; c++)
-                {
-                    decimal[][] minor = getMatrixMinor(m, r, c);
-                    cofactorRow.Add((decimal)Math.Pow(-1, r + c) * getMatrixDeterminant(minor));
-                }
+                    cofactorRow.Add((decimal)Math.Pow(-1, r + c) * getMatrixDeterminant(getMatrixMinor(m, r, c)));
                 cofactors.Add(cofactorRow);
             }
             decimal[][] C = getMatrixTranspose(cofactors.Select(Enumerable.ToArray).ToArray());
