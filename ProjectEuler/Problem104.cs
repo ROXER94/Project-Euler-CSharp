@@ -10,10 +10,10 @@ namespace ProjectEuler
         /// </summary>
         static void P104()
         {
-            int n = 1;
-            while (!Functions.isPandigital((long)(Functions.getFibonacci(n) % 1000000000)) || !Functions.isPandigital(Convert.ToInt64(Functions.getFibonacci(n).ToString().Substring(0, 9))))
-                n++;
-            Console.WriteLine(n);
+            int ans = 1;
+            while (!Functions.isPandigital((long)(Functions.getFibonacci(ans) % 1000000000)) || !Functions.isPandigital(Convert.ToInt64(Functions.getFibonacci(ans).ToString().Substring(0, 9))))
+                ans++;
+            Console.WriteLine(ans);
 
         }
     }
