@@ -59,7 +59,8 @@ namespace ProjectEuler
         {
             if (m.Length == 2) return m[0][0] * m[1][1] - m[0][1] * m[1][0];
             decimal determinant = 0;
-            for (int c = 0; c < m.Length; c++) determinant += (decimal)Math.Pow(-1, c) * m[0][c] * getMatrixDeterminant(getMatrixMinor(m, 0, c));
+            for (int c = 0; c < m.Length; c++)
+                determinant += (decimal)Math.Pow(-1, c) * m[0][c] * getMatrixDeterminant(getMatrixMinor(m, 0, c));
             return determinant;
         }
 
@@ -122,11 +123,11 @@ namespace ProjectEuler
                 List<List<decimal>> ReversedPowers = new List<List<decimal>>();
                 for (int j = 1; j <= BOPSsubset.Count(); j++)
                 {
-                    List<decimal> ReversedPowersElements = new List<decimal>();
+                    List<decimal> rp = new List<decimal>();
                     for (int k = 0; k < BOPSsubset.Count(); k++)
-                        ReversedPowersElements.Add((decimal)Math.Pow(j, k));
-                    ReversedPowersElements.Reverse();
-                    ReversedPowers.Add(ReversedPowersElements);
+                        rp.Add((decimal)Math.Pow(j, k));
+                    rp.Reverse();
+                    ReversedPowers.Add(rp);
                 }
                 decimal[][] MatrixProduct = getMatrixMultiplication(getMatrixInverse(ReversedPowers.Select(Enumerable.ToArray).ToArray()), BOPSsubset);
                 Array.Reverse(MatrixProduct);
