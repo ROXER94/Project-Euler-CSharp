@@ -79,7 +79,7 @@ namespace ProjectEuler
         static bool isSudokuRowsValid(int[,] board)
         {
             for (int r = 0; r < board.GetLength(0); r++)
-                if (Functions.hasDuplicates(Functions.GetArrayRow(board, r), new int[] { 0 }))
+                if (Functions.hasDuplicates(Functions.getArrayRow(board, r), new int[] { 0 }))
                     return false;
             return true;
         }
@@ -92,7 +92,7 @@ namespace ProjectEuler
         static bool isSudokuColumnsValid(int[,] board)
         {
             for (int c = 0; c < board.GetLength(1); c++)
-                if (Functions.hasDuplicates(Functions.GetArrayColumn(board, c), new int[] { 0 }))
+                if (Functions.hasDuplicates(Functions.getArrayColumn(board, c), new int[] { 0 }))
                     return false;
             return true;
         }
@@ -218,7 +218,7 @@ namespace ProjectEuler
         static void printSudoku(int[,] sudoku)
         {
             for (int r = 0; r < sudoku.GetLength(0); r++)
-                Console.WriteLine(String.Join(",", Functions.GetArrayRow(sudoku, r)));
+                Console.WriteLine(String.Join(",", Functions.getArrayRow(sudoku, r)));
             Console.WriteLine();
         }
 
