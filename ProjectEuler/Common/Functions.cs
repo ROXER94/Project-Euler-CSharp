@@ -138,7 +138,7 @@ namespace ProjectEuler.Common
         /// <param name="array">Int[,]</param>
         /// <param name="row">Int</param>
         /// <returns>The row of an int[,] array</returns>
-        public static int[] GetArrayRow(int[,] array, int row)
+        public static int[] getArrayRow(int[,] array, int row)
         {
             int width = array.GetLength(1);
             int height = array.GetLength(0);
@@ -155,7 +155,7 @@ namespace ProjectEuler.Common
         /// <param name="array">Int[,]</param>
         /// <param name="col">Int</param>
         /// <returns>The column of an int[,] array</returns>
-        public static int[] GetArrayColumn(int[,] array, int col)
+        public static int[] getArrayColumn(int[,] array, int col)
         {
             int width = array.GetLength(0);
             int height = array.GetLength(1);
