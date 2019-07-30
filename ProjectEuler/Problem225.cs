@@ -36,13 +36,11 @@ namespace ProjectEuler
             {
                 bool divide = false;
                 foreach (BigInteger t in TribonacciDict.Values)
-                {
                     if (t % ans == 0)
                     {
                         divide = true;
                         break;
                     }
-                }
                 if (!divide) count++;
                 if (count == 124)
                 {
