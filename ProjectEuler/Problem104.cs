@@ -1,5 +1,6 @@
 ﻿using ProjectEuler.Common;
 using System;
+using System.Numerics;
 
 namespace ProjectEuler
 {
@@ -11,10 +12,17 @@ namespace ProjectEuler
         static void P104()
         {
             int ans = 1;
-            while (!Functions.isPandigital((long)(Functions.getFibonacci(ans) % 1000000000)) || !Functions.isPandigital(Convert.ToInt64(Functions.getFibonacci(ans).ToString().Substring(0, 9))))
-                ans++;
+            BigInteger a = 0;
+            BigInteger b = 1;
+            while (true)
+            {
+                if (ans % 2 == 0) a += b;
+                else b += a;
+                if (Functions.isPandigital((long)(Functions.getFibonacci(ans) % 1000000000)) && Functions.isPandigital(Convert.ToInt64(Functions.getFibonacci(ans).ToString().Substring(0, 9))))
+                    break;
+                else ans++;
+            }
             Console.WriteLine(ans);
-
         }
     }
 }
