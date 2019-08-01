@@ -18,8 +18,7 @@ namespace ProjectEuler
             {
                 if (ans % 2 == 0) a += b;
                 else b += a;
-                if (Functions.isPandigital((long)(Functions.getFibonacci(ans) % 1000000000)) && Functions.isPandigital(Convert.ToInt64(Functions.getFibonacci(ans).ToString().Substring(0, 9))))
-                    break;
+                if (Functions.isPandigital((long)(a % 1000000000)) && Functions.isPandigital(Convert.ToInt64(a.ToString().Substring(0, 9)))) break;
                 else ans++;
             }
             Console.WriteLine(ans);
