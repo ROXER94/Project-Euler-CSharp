@@ -15,7 +15,8 @@ namespace ProjectEuler
                 if ((int)(Math.Log(ans + 1, 2)) / ans < 1.0 / 12345) break;
                 ans++;
             }
-            Console.WriteLine(ans * (ans + 1));
+            ans *= ans + 1;
+            Console.WriteLine(ans);
         }
     }
 }
