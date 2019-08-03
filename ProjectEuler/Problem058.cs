@@ -26,7 +26,8 @@ namespace ProjectEuler
                 ratio = primesCount / diagonalCount;
                 ans += 2;
             }
-            Console.WriteLine(ans - 2);
+            ans -= 2;
+            Console.WriteLine(ans);
         }
     }
 }
