@@ -200,7 +200,7 @@ namespace ProjectEuler.Common
         /// Determines if a string is a palindrome
         /// </summary>
         /// <param name="str">String</param>
-        /// <returns>True if string is a palindrome</returns>
+        /// <returns>True if str is a palindrome</returns>
         public static bool isPalindrome(string str)
         {
             return str == new String(str.ToCharArray().Reverse().ToArray());
