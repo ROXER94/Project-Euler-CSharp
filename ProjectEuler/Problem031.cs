@@ -16,7 +16,7 @@ namespace ProjectEuler
             for (int i = 0; i < coins.Length; i++)
                 for (int j = coins[i]; j <= n; j++)
                     ways[j] += ways[j - coins[i]];
-            Console.Write(ways[n]);
+            Console.WriteLine(ways[n]);
         }
     }
 }
