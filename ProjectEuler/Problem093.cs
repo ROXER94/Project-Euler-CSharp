@@ -15,36 +15,36 @@ namespace ProjectEuler
         static double getReversePolishNotation(string[] expression)
         {
             Stack<double> stack = new Stack<double>();
-            foreach (string i in expression)
+            foreach (string s in expression)
             {
-                if (i == "+" || i == "-" || i == "*" || i == "/")
+                if (s == "+" || s == "-" || s == "*" || s == "/")
                 {
-                    if (i == "+")
+                    if (s == "+")
                     {
                         double a = stack.Pop();
                         double b = stack.Pop();
                         stack.Push(b + a);
                     }
-                    else if (i == "-")
+                    else if (s == "-")
                     {
                         double a = stack.Pop();
                         double b = stack.Pop();
                         stack.Push(b - a);
                     }
-                    else if (i == "*")
+                    else if (s == "*")
                     {
                         double a = stack.Pop();
                         double b = stack.Pop();
                         stack.Push(b * a);
                     }
-                    else if (i == "/")
+                    else if (s == "/")
                     {
                         double a = stack.Pop();
                         double b = stack.Pop();
                         stack.Push(b / a);
                     }
                 }
-                else stack.Push(Convert.ToDouble(i));
+                else stack.Push(Convert.ToDouble(s));
             }
             if (double.IsInfinity(stack.Peek()) || double.IsNaN(stack.Peek()))
                 throw new System.ArgumentException("Division by constant zero");
